@@ -105,6 +105,14 @@ class MyMenuManager extends MenuManager {
                     [StatusType.Updated | StatusType.Drawn]
                 )
             );
+
+            notificationCenter.notify(
+                new Notification(
+                    NotificationType.Sound,
+                    NotificationAction.Play,
+                    ["background"]
+                )
+            );
         });
 
         // If the audio button is clicked

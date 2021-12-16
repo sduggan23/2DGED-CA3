@@ -3,8 +3,9 @@ body {
     user-select: none;
     font-family: 'Audiowide', cursive;
     font-size: 16px;
-
-    background-color: #4b4b4b;;
+    background-color: #B30D5D;
+    background-image: linear-gradient(to bottom, #ffcc80 0%, #B30D5D 100%);
+    margin-top: 45px;
 }
 
 #title {
@@ -23,7 +24,7 @@ body {
     margin: 0 auto;
 
     background-color: #4b4b4b;
-    border: 1px solid black;
+    border: 10px solid black;
 }
 
 #menu_block {
@@ -37,6 +38,7 @@ body {
     color: #ff9900;
     font-weight: 300;
     text-shadow: 5px 5px #000000;
+
 }
 
 .menu {

@@ -71,6 +71,8 @@ class PlayerMoveController {
 
             // Update the player's animation
             parent.artist.setTake("Run Right");
+
+
         }
     }
 
@@ -229,6 +231,7 @@ class PlayerMoveController {
                         ["jump"]
                     )
                 );
+                
 
                 notificationCenter.notify(
                     new Notification(
@@ -244,7 +247,7 @@ class PlayerMoveController {
                 //     new Notification(
                 //         NotificationType.Sprite,
                 //         NotificationAction.RemoveFirstBy,
-                //         [ActorType.Platform, platform => platform.transform.translation.x > 400]
+                //         [ActorType.Platform, platform => platform.transform.translation.y > 800]
                 //     )
                 // );
             }

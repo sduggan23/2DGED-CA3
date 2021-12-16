@@ -84,29 +84,43 @@ class GameData {
       new Vector2(320, 400),
       new Vector2(480, 400),
       new Vector2(640, 400),
-      new Vector2(800, 400)
-
-      /****************** Screen 2 *******************/
-
-      // // Middle Low
-      // new Vector2(200, 370),
-      // new Vector2(250, 370),
-      // new Vector2(300, 370),
-      // new Vector2(350, 370),
-
-      // // Middle High
-      // new Vector2(250, 240),
-      // new Vector2(300, 240),
-
-      // // Middle Right
-      // new Vector2(450, 300),
-      // new Vector2(500, 300),
-      // new Vector2(550, 300),
-      // new Vector2(600, 300),
-      // new Vector2(0, 380),
-      // new Vector2(160, 380),
-      // new Vector2(320, 380),
+      new Vector2(800, 400),
     ]
+    
+  };
+
+  static PLATFORM_DATA2 = {
+    id: "Platform2",
+    spriteSheet: document.getElementById("cyber_tileset"),
+    sourcePosition: new Vector2(361, 16),
+    sourceDimensions: new Vector2(85, 96),
+    rotation: 0,
+    scale: Vector2.One,
+    origin: Vector2.Zero,
+    actorType: ActorType.Platform,
+    collisionType: CollisionType.Collidable,
+    layerDepth: 0,
+    explodeBoundingBoxInPixels: -6,
+
+    // We have just one platform sprite, so it makes sense to
+    // store a list of positions at which we want to place that
+    // sprite in our game world. Mess around with these values
+    // by either adding or removing positions from our array, or
+    // by editing the x, y values of each position. Check out the 
+    // results by refreshing the web page!
+    translationArray: [
+
+      /****************** Screen 1 *******************/
+
+      // Floor
+      new Vector2(0, 400),
+      new Vector2(160, 400),
+      new Vector2(320, 400),
+      new Vector2(480, 400),
+      new Vector2(640, 400),
+      new Vector2(800, 400),
+    ]
+    
   };
 
   static COLLECTIBLES_ANIMATION_DATA = {

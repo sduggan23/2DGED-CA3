@@ -694,7 +694,7 @@ function initializeOnScreenText() {
     artist = new TextSpriteArtist(
         context,                        // Context
         1,                              // Alpha
-        "Go, go, go!",                  // Text
+        "Start!",                  // Text
         FontType.InformationMedium,     // Font Type
         Color.White,                    // Color
         TextAlignType.Left,             // Text Align
