@@ -19,7 +19,7 @@ let menuManager;
 let uiManager;
 
 // Set to false to hide bounding boxes
-const debugMode = false;
+const debugMode = true;
 
 function start() {
 
@@ -536,19 +536,19 @@ function initializeEnemies() {
         GameData.ENEMY_ANIMATION_DATA
     );
 
-    artist.setTake("Wasp Fly");
+    artist.setTake("Drone Fly");
 
     transform = new Transform2D(
         new Vector2(400, 200),
         0,
         new Vector2(1, 1),
         Vector2.Zero,
-        artist.getBoundingBoxByTakeName("Wasp Fly"),
+        artist.getBoundingBoxByTakeName("Drone Fly"),
         0
     );
 
     sprite = new MoveableSprite(
-        "Wasp",
+        "Drone",
         transform,
         ActorType.Enemy,
         CollisionType.Collidable,

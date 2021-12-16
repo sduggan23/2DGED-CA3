@@ -1,10 +1,13 @@
 <html>
 
 <head>
-    <title>Snailbait</title>
+    <title>Synth Shooter</title>
 
     <!-- Include Stylesheets -->
-    <link rel="stylesheet" href="css/snailbait.css" />
+    <link rel="stylesheet" href="css/synth-shooter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet"> 
 
     <!-- Add JQuery Support -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -14,7 +17,7 @@
 
     <!-- Create Title -->
     <div id="title">
-        <h1>Snailbait</h1>
+        <h1>Synth Shooter</h1>
     </div>
 
     <!-- Create Game Window -->
@@ -25,7 +28,7 @@
 
             <!-- Main Menu -->
             <div id="main_menu" class="menu">
-                <h1>Game Title Here</h1>
+                <h1>Synth Shooter</h1>
                 <ul>
                     <li><a href="javascript:void(0)" class="button play">Start Game</a></li>
                     <li><a href="javascript:void(0)" id="audio_button" class="button">Toggle Audio</a></li>
@@ -57,13 +60,15 @@
     </div>
 
     <!-- Load Sprite Assets -->
-    <img id="snailbait_background_1" class="sprite" src="assets/images/background/background-1.png" />
-    <img id="snailbait_background_2" class="sprite" src="assets/images/background/background-2.png" />
-    <img id="snailbait_background_3" class="sprite" src="assets/images/background/background-3.png" />
-    <img id="snailbait_background_4" class="sprite" src="assets/images/background/background-4.png" />
-    <img id="snailbait_background_5" class="sprite" src="assets/images/background/background-5.png" />
+    <img id="synth_shooter_background_1" class="sprite" src="assets/images/bg/far-buildings.png" />
+    <img id="synth_shooter_background_2" class="sprite" src="assets/images/bg/back-buildings.png" />
+    <img id="synth_shooter_background_3" class="sprite" src="assets/images/bg/foreground.png" />
 
-    <img id="snailbait_jungle_tileset" class="sprite" src="assets/images/platform/jungle-tileset.png" />
+    <img id="cyber_tileset" class="sprite" src="assets/images/platform/cyber-tileset.png" />
+    <img id="kat_sprite_sheet" class="sprite" src="assets/images/catspritesx2.png" />
+    <img id="rachel_sprite_sheet" class="sprite" src="assets/images/rachelsprites.png" />
+    <img id="drone_sprite_sheet" class="sprite" src="assets/images/dronesprites.png" />
+
     <img id="snailbait_sprite_sheet" class="sprite" src="assets/images/spritesheet.png" />
     <img id="ui_sprite_sheet" class="sprite" src="assets/images/ui/ui-spritesheet.png" />
 
@@ -128,7 +133,7 @@
     <script src="js/Managers/MyUIManager.js"></script>
 
     <!-- Load Game -->
-    <script src="js/snailbait.js"></script>
+    <script src="js/synth-shooter.js"></script>
 </body>
 
 </html>

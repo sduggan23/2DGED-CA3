@@ -1,10 +1,10 @@
 body {
     cursor: default;
     user-select: none;
-    font-family: arial, sans-serif;
+    font-family: 'Audiowide', cursive;
     font-size: 16px;
 
-    background-color: burlywood;
+    background-color: #4b4b4b;;
 }
 
 #title {
@@ -13,7 +13,7 @@ body {
 }
 
 #title h1 {
-    color: rgb(90, 41, 0);
+    color: #ff0080;
 }
 
 #game_window {
@@ -22,7 +22,7 @@ body {
     height: 468;
     margin: 0 auto;
 
-    background-color: #2B5754;
+    background-color: #4b4b4b;
     border: 1px solid black;
 }
 
@@ -34,7 +34,9 @@ body {
     top: 0;
 
     text-align: center;
-    color: white;
+    color: #ff9900;
+    font-weight: 300;
+    text-shadow: 5px 5px #000000;
 }
 
 .menu {
@@ -51,7 +53,7 @@ body {
 }
 
 #main_menu {
-    background-image: url('../assets/images/ui/menu-background.png');
+    background-image: url('../assets/images/ui/cyberpunk-city-2-back-preview.png');
 }
 
 #exit_menu {
@@ -92,15 +94,17 @@ a {
     color: white;
     font-weight: bold;
     line-height: 30px;
-    text-shadow: 1px 1px 0 black;
-    background-image: linear-gradient(to bottom, #2B5754 0%, rgb(13, 179, 143) 100%);
+    text-shadow: 2px 2px 0 black;
+    background-image: linear-gradient(to bottom,  #ff00ff 0%, #ff0080 100%);
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .button:hover {
     background-color: #B30D5D;
-    background-image: linear-gradient(to bottom, #B30D5D 0%, #FB1886 100%);
+    background-image: linear-gradient(to bottom, #ffcc80 0%, #ff9900 100%);
+
+    transition: all 0.25s ease-in;
 }
 
 .sprite {

@@ -7,13 +7,13 @@ class GameData {
     new AudioCue("game_over", AudioType.WinLose, 1, 1, 0, false),
   ];
 
-  static BACKGROUND_DIMENSIONS = new Vector2(384, 216);
+  static BACKGROUND_DIMENSIONS = new Vector2(250, 190);
 
   static BACKGROUND_DATA = [
 
     {
       id: "Background 1",
-      spriteSheet: document.getElementById("snailbait_background_1"),
+      spriteSheet: document.getElementById("synth_shooter_background_1"),
       sourcePosition: Vector2.Zero,
       sourceDimensions: this.BACKGROUND_DIMENSIONS,
       translation: Vector2.Zero,
@@ -28,7 +28,7 @@ class GameData {
 
     {
       id: "Background 2",
-      spriteSheet: document.getElementById("snailbait_background_2"),
+      spriteSheet: document.getElementById("synth_shooter_background_2"),
       sourcePosition: Vector2.Zero,
       sourceDimensions: this.BACKGROUND_DIMENSIONS,
       translation: Vector2.Zero,
@@ -42,8 +42,8 @@ class GameData {
 
     {
       id: "Background 3",
-      spriteSheet: document.getElementById("snailbait_background_3"),
-      sourcePosition: Vector2.Zero,
+      spriteSheet: document.getElementById("synth_shooter_background_3"),
+      sourcePosition: new Vector2(0, -32),
       sourceDimensions: this.BACKGROUND_DIMENSIONS,
       translation: Vector2.Zero,
       rotation: 0,
@@ -52,42 +52,14 @@ class GameData {
       actorType: ActorType.Background,
       layerDepth: 0.15,
       scrollSpeedMultiplier: 0.1
-    },
-
-    {
-      id: "Background 4",
-      spriteSheet: document.getElementById("snailbait_background_4"),
-      sourcePosition: Vector2.Zero,
-      sourceDimensions: this.BACKGROUND_DIMENSIONS,
-      translation: Vector2.Zero,
-      rotation: 0,
-      scale: Vector2.One,
-      origin: Vector2.Zero,
-      actorType: ActorType.Background,
-      layerDepth: 0.2,
-      scrollSpeedMultiplier: 0.05
-    },
-
-    {
-      id: "Background 5",
-      spriteSheet: document.getElementById("snailbait_background_5"),
-      sourcePosition: Vector2.Zero,
-      sourceDimensions: this.BACKGROUND_DIMENSIONS,
-      translation: Vector2.Zero,
-      rotation: 0,
-      scale: Vector2.One,
-      origin: Vector2.Zero,
-      actorType: ActorType.Background,
-      layerDepth: 0.25,
-      scrollSpeedMultiplier: 0.01
     }
   ];
 
   static PLATFORM_DATA = {
     id: "Platform",
-    spriteSheet: document.getElementById("snailbait_jungle_tileset"),
-    sourcePosition: new Vector2(0, 112),
-    sourceDimensions: new Vector2(48, 48),
+    spriteSheet: document.getElementById("cyber_tileset"),
+    sourcePosition: new Vector2(0, 16),
+    sourceDimensions: new Vector2(160, 96),
     rotation: 0,
     scale: Vector2.One,
     origin: Vector2.Zero,
@@ -106,63 +78,34 @@ class GameData {
 
       /****************** Screen 1 *******************/
 
-      // Middle Low
-      new Vector2(200, 370),
-      new Vector2(250, 370),
-      new Vector2(300, 370),
-      new Vector2(350, 370),
-
-      // Middle High
-      new Vector2(250, 240),
-      new Vector2(300, 240),
-
-      // Middle Right
-      new Vector2(450, 300),
-      new Vector2(500, 300),
-      new Vector2(550, 300),
-      new Vector2(600, 300),
-
       // Floor
-      new Vector2(0, 420),
-      new Vector2(50, 420),
-      new Vector2(100, 420),
-      new Vector2(150, 420),
-      new Vector2(200, 420),
-      new Vector2(250, 420),
-      new Vector2(300, 420),
-      new Vector2(350, 420),
-      new Vector2(400, 420),
-      new Vector2(450, 420),
-      new Vector2(500, 420),
-      new Vector2(550, 420),
-      new Vector2(600, 420),
-      new Vector2(650, 420),
-      new Vector2(700, 420),
-      new Vector2(750, 420),
-      new Vector2(800, 420),
+      new Vector2(0, 400),
+      new Vector2(160, 400),
+      new Vector2(320, 400),
+      new Vector2(480, 400),
+      new Vector2(640, 400),
+      new Vector2(800, 400)
 
       /****************** Screen 2 *******************/
 
-      // Floor
-      new Vector2(850, 420),
-      new Vector2(900, 420),
-      new Vector2(950, 420),
-      new Vector2(1000, 420),
-      new Vector2(1050, 420),
-      new Vector2(1100, 420),
-      new Vector2(1150, 420),
-      new Vector2(1200, 420),
+      // // Middle Low
+      // new Vector2(200, 370),
+      // new Vector2(250, 370),
+      // new Vector2(300, 370),
+      // new Vector2(350, 370),
 
-      // GAP!
+      // // Middle High
+      // new Vector2(250, 240),
+      // new Vector2(300, 240),
 
-      new Vector2(1400, 420),
-      new Vector2(1450, 420),
-      new Vector2(1500, 420),
-      new Vector2(1550, 420),
-      new Vector2(1600, 420),
-      new Vector2(1650, 420),
-      new Vector2(1700, 420),
-      new Vector2(1750, 420),
+      // // Middle Right
+      // new Vector2(450, 300),
+      // new Vector2(500, 300),
+      // new Vector2(550, 300),
+      // new Vector2(600, 300),
+      // new Vector2(0, 380),
+      // new Vector2(160, 380),
+      // new Vector2(320, 380),
     ]
   };
 
@@ -248,12 +191,12 @@ class GameData {
   static RUNNER_START_POSITION = new Vector2(80, 250);
   static RUNNER_MOVE_KEYS = [Keys.A, Keys.D, Keys.Space];
   static RUNNER_RUN_VELOCITY = 0.1;
-  static RUNNER_JUMP_VELOCITY = 0.6;
+  static RUNNER_JUMP_VELOCITY = 0.5;
 
   static RUNNER_ANIMATION_DATA = {
 
     id: "Runner Animation Data",
-    spriteSheet: document.getElementById("snailbait_sprite_sheet"),
+    spriteSheet: document.getElementById("rachel_sprite_sheet"),
 
     // Animations
     takes: {
@@ -269,7 +212,7 @@ class GameData {
         maxLoopCount: -1,
 
         startFrameIndex: 0,
-        endFrameIndex: 0,
+        endFrameIndex: 3,
 
         // Notice that I chose the largest of all the widths taken from the frames
         // array below
@@ -280,7 +223,10 @@ class GameData {
           // This list of rects just represent the positions
           // and dimension of each individual animation frame
           // on the sprite sheet
-          new Rect(96, 385, 46, 54),    // Animation frame 2
+          new Rect(304, 16, 21, 46),    // Animation frame 1
+          new Rect(378, 12, 20, 50),    // Animation frame 2
+          new Rect(443, 11, 20, 50),    // Animation frame 3
+          new Rect(507, 14, 20, 50),    // Animation frame 4
         ]
       },
 
@@ -295,22 +241,21 @@ class GameData {
         maxLoopCount: -1,
 
         startFrameIndex: 0,
-        endFrameIndex: 8,
+        endFrameIndex: 7,
 
         // Notice that I chose the largest of all the widths taken from the frames
         // array below
         boundingBoxDimensions: new Vector2(49, 54),
 
         frames: [
-          new Rect(0, 305, 47, 54),     // Animation frame 1
-          new Rect(55, 305, 44, 54),    // Animation frame 2
-          new Rect(107, 305, 39, 54),   // Animation frame 3
-          new Rect(152, 305, 46, 54),   // Animation frame 4
-          new Rect(208, 305, 49, 54),   // Animation frame 5
-          new Rect(265, 305, 46, 54),   // Animation frame 6
-          new Rect(320, 305, 42, 54),   // Animation frame 7
-          new Rect(380, 305, 35, 54),   // Animation frame 8
-          new Rect(425, 305, 35, 54)    // Animation frame 9
+          new Rect(10, 149, 26, 48),     // Animation frame 1
+          new Rect(76, 149, 36, 48),    // Animation frame 2
+          new Rect(140, 149, 47, 46),   // Animation frame 3
+          new Rect(206, 149, 41, 51),   // Animation frame 4
+          new Rect(10, 213, 31, 48),   // Animation frame 5
+          new Rect(76, 213, 36, 49),   // Animation frame 6
+          new Rect(139, 213, 47, 46),   // Animation frame 7
+          new Rect(205, 213, 42, 51)   // Animation frame 8
         ]
       },
 
@@ -325,7 +270,7 @@ class GameData {
         maxLoopCount: -1,
 
         startFrameIndex: 0,
-        endFrameIndex: 8,
+        endFrameIndex: 7,
 
         // Notice that I chose the largest of all the widths taken from the frames
         // array below
@@ -337,32 +282,131 @@ class GameData {
           // and dimension of each individual animation frame
           // on the sprite sheet
 
-          new Rect(414, 385, 47, 54),   // Animation frame 1
-          new Rect(362, 385, 44, 54),   // Animation frame 2
-          new Rect(314, 385, 39, 54),   // Animation frame 3
-          new Rect(265, 385, 46, 54),   // Animation frame 4
-          new Rect(205, 385, 49, 54),   // Animation frame 5
-          new Rect(150, 385, 46, 54),   // Animation frame 6
-          new Rect(96, 385, 46, 54),    // Animation frame 7
-          new Rect(45, 385, 35, 54),    // Animation frame 8
-          new Rect(0, 385, 35, 54)      // Animation frame 9
+          new Rect(10, 16, 41, 51),   // Animation frame 1
+          new Rect(71, 16, 47, 46),   // Animation frame 2
+          new Rect(145, 16, 36, 48),   // Animation frame 3
+          new Rect(221, 16, 26, 48),   // Animation frame 4
+          new Rect(10, 80, 42, 51),   // Animation frame 5
+          new Rect(71, 80, 47, 46),   // Animation frame 6
+          new Rect(145, 80, 36, 49),   // Animation frame 7
+          new Rect(216, 80, 31, 48)    // Animation frame 8
         ]
       },
     }
   };
 
+  // static RUNNER_ANIMATION_DATA = {
+
+  //   id: "Runner Animation Data",
+  //   spriteSheet: document.getElementById("kat_sprite_sheet"),
+
+  //   // Animations
+  //   takes: {
+
+  //     // Animation 1
+  //     "Idle": {
+
+  //       frameRatePerSec: 2,
+
+  //       // -1 = Loop forever
+  //       //  0 = Run once (no loop)
+  //       //  N = Loop N times
+  //       maxLoopCount: -1,
+
+  //       startFrameIndex: 0,
+  //       endFrameIndex: 0,
+
+  //       // Notice that I chose the largest of all the widths taken from the frames
+  //       // array below
+  //       boundingBoxDimensions: new Vector2(49, 34),
+
+  //       frames: [
+
+  //         // This list of rects just represent the positions
+  //         // and dimension of each individual animation frame
+  //         // on the sprite sheet
+  //         new Rect(194, 0, 38, 30),    // Animation frame 2
+  //       ]
+  //     },
+
+  //     // Animation 2
+  //     "Run Left": {
+
+  //       frameRatePerSec: 12,
+
+  //       // -1 = Loop forever
+  //       //  0 = Run once (no loop)
+  //       //  N = Loop N times
+  //       maxLoopCount: -1,
+
+  //       startFrameIndex: 0,
+  //       endFrameIndex: 7,
+
+  //       // Notice that I chose the largest of all the widths taken from the frames
+  //       // array below
+  //       boundingBoxDimensions: new Vector2(49, 34),
+
+  //       frames: [
+
+  //         new Rect(190, 36, 36, 28),   // Animation frame 1
+  //         new Rect(234, 34, 36, 30),   // Animation frame 2
+  //         new Rect(0, 76, 40, 24),   // Animation frame 3
+  //         new Rect(48, 76, 40, 24),   // Animation frame 4
+  //         new Rect(94, 74, 49, 54),   // Animation frame 5
+  //         new Rect(138, 72, 40, 28),    // Animation frame 6
+  //         new Rect(186, 68, 38, 30),    // Animation frame 7
+  //         new Rect(230, 72, 38, 26)      // Animation frame 8
+  //       ]
+  //     },
+
+  //     // Animation 3
+  //     "Run Right": {
+
+  //       frameRatePerSec: 12,
+
+  //       // -1 = Loop forever
+  //       //  0 = Run once (no loop)
+  //       //  N = Loop N times
+  //       maxLoopCount: -1,
+
+  //       startFrameIndex: 0,
+  //       endFrameIndex: 7,
+
+  //       // Notice that I chose the largest of all the widths taken from the frames
+  //       // array below
+  //       boundingBoxDimensions: new Vector2(49, 34),
+
+  //       frames: [
+
+  //         // This list of rects just represent the positions
+  //         // and dimension of each individual animation frame
+  //         // on the sprite sheet
+
+  //         new Rect(190, 36, 36, 28),   // Animation frame 1
+  //         new Rect(234, 34, 36, 30),   // Animation frame 2
+  //         new Rect(0, 76, 40, 24),   // Animation frame 3
+  //         new Rect(48, 76, 40, 24),   // Animation frame 4
+  //         new Rect(94, 74, 49, 54),   // Animation frame 5
+  //         new Rect(138, 72, 40, 28),    // Animation frame 6
+  //         new Rect(186, 68, 38, 30),    // Animation frame 7
+  //         new Rect(230, 72, 38, 26)      // Animation frame 8
+  //       ]
+  //     },
+  //   }
+  // };
+
   static ENEMY_ANIMATION_DATA = {
 
     id: "Enemy Animation Data",
-    spriteSheet: document.getElementById("snailbait_sprite_sheet"),
+    spriteSheet: document.getElementById("drone_sprite_sheet"),
     
     // Animations
     takes: {
 
       // Animation 1
-      "Wasp Fly": {
+      "Drone Fly": {
 
-        frameRatePerSec: 10,
+        frameRatePerSec: 2,
         
         // -1 = Loop forever
         //  0 = Run once (no loop)
@@ -370,14 +414,23 @@ class GameData {
         maxLoopCount: -1,
 
         startFrameIndex: 0,
-        endFrameIndex: 2,
+        endFrameIndex: 8,
 
         boundingBoxDimensions: new Vector2(35, 50),
 
         frames: [
-          new Rect(20, 234, 35, 50),
-          new Rect(90, 234, 35, 50),
-          new Rect(160, 234, 35, 50)
+          new Rect(16, 4, 34, 48),
+          new Rect(77, 4, 29, 48),
+          new Rect(150, 3, 31, 48),
+          new Rect(226, 4, 29, 48),
+          new Rect(221, 74, 34, 48),
+          new Rect(226, 4, 29, 48),
+          new Rect(150, 3, 31, 48),
+          new Rect(77, 4, 29, 48),
+          new Rect(16, 4, 34, 48)
+
+
+
         ]
       }
     }
