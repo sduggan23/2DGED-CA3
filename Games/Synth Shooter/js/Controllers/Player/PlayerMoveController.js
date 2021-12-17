@@ -241,15 +241,13 @@ class PlayerMoveController {
                     )
                 );
 
-                // Uncomment this code to see how we could remove the first platform that has an
-                // x position > 400
-                // notificationCenter.notify(
-                //     new Notification(
-                //         NotificationType.Sprite,
-                //         NotificationAction.RemoveFirstBy,
-                //         [ActorType.Platform, platform => platform.transform.translation.y > 800]
-                //     )
-                // );
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sprite,
+                        NotificationAction.RemoveFirstBy,
+                        [ActorType.Platform, platform => platform.transform.translation.y > 500 && platform.transform.translation.x > 500]
+                    )
+                );
             }
         }
     }

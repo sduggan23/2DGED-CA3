@@ -30,14 +30,16 @@ class FlightCameraController {
      */
     update(gameTime, parent) {
 
+        // parent.transform.translation.x = this.playerSprite.transform.translation.x;
+
         // Translate camera
-        if (this.keyboardManager.isKeyDown(this.moveKeys[0])) {
+        if (this.keyboardManager.isKeyDown(Keys.A)) {
 
             // Move left
             parent.transform.translateBy(Vector2.MultiplyScalar(this.moveSpeed, -1));
         }
 
-        else if (this.keyboardManager.isKeyDown(this.moveKeys[1])) {
+        else if (this.keyboardManager.isKeyDown(Keys.D)) {
 
             // Move right
             parent.transform.translateBy(Vector2.MultiplyScalar(this.moveSpeed, 1));

@@ -235,7 +235,7 @@ function initializeCameras() {
                 Keys.Numpad4, Keys.Numpad6, Keys.Numpad7, Keys.Numpad9,
                 Keys.Numpad8, Keys.Numpad2, Keys.Numpad5
             ],
-            new Vector2(3, 0),
+            new Vector2(2, 0),
             Math.PI / 180,
             new Vector2(0.005, 0.005)
         )
@@ -385,7 +385,7 @@ function initializePickups() {
     );
 
     transform = new Transform2D(
-        new Vector2(530, 250),                          // Translation
+        new Vector2(0, 250),                          // Translation
         0,                                              // Rotation
         Vector2.One,                                    // Scale
         Vector2.Zero,                                   // Origin
@@ -432,7 +432,7 @@ function initializePickups() {
         // Translate sprite
         spriteClone.transform.translateBy(
             new Vector2(
-                (i * 100),
+                (i * 150),
                 0
             )
         );
@@ -497,7 +497,7 @@ function initializePlayer() {
 
     // Set characteristics of the body attached to the moveable sprite
     // Play around with these values and see what happens.
-    sprite.body.maximumSpeed = 6;
+    sprite.body.maximumSpeed = GameData.MAX_SPEED;
     sprite.body.friction = FrictionType.Low;
     sprite.body.gravity = GravityType.Weak;
 
@@ -515,12 +515,15 @@ function initializePlayer() {
             objectManager,
             GameData.RUNNER_MOVE_KEYS,
             GameData.RUNNER_RUN_VELOCITY,
-            GameData.RUNNER_JUMP_VELOCITY
+            GameData.RUNNER_JUMP_VELOCITY,
+            GameData.MAX_SPEED
         )
     );
 
     // Add sprite to object manager
     objectManager.add(sprite);
+
+   
 }
 
 function initializeEnemies() {
@@ -560,7 +563,7 @@ function initializeEnemies() {
 
     // Set performance characteristics of the physics body that is
     // attached to the moveable sprite
-    sprite.body.maximumSpeed = 6;
+    sprite.body.maximumSpeed = GameData.MAX_SPEED;
     sprite.body.friction = FrictionType.Normal;
     sprite.body.gravity = GravityType.Normal;
 
@@ -599,7 +602,7 @@ function initializeEnemies() {
                     new Notification(
                         NotificationType.Sound,
                         NotificationAction.Play,
-                        ["boing"]
+                        ["boing"],
                     )
                 );
 
@@ -694,10 +697,10 @@ function initializeOnScreenText() {
     artist = new TextSpriteArtist(
         context,                        // Context
         1,                              // Alpha
-        "Start!",                  // Text
+        "Collect pickups to progress!",                  // Text
         FontType.InformationMedium,     // Font Type
         Color.White,                    // Color
-        TextAlignType.Left,             // Text Align
+        TextAlignType.Center,             // Text Align
         200,                            // Max Width
 
         // Set this to true if you want the sprite to stay in one

@@ -81,44 +81,34 @@ class GameData {
       // Floor
       new Vector2(0, 400),
       new Vector2(160, 400),
-      new Vector2(320, 400),
+      // new Vector2(320, 400),
       new Vector2(480, 400),
       new Vector2(640, 400),
       new Vector2(800, 400),
-    ]
-    
-  };
+      new Vector2(960, 400),
+      new Vector2(1120, 400),
+      new Vector2(1280, 400),
+      new Vector2(1440, 400),
+      new Vector2(1600, 400),
+      new Vector2(1760, 400),
+      new Vector2(1920, 400),
+      new Vector2(2080, 400),
 
-  static PLATFORM_DATA2 = {
-    id: "Platform2",
-    spriteSheet: document.getElementById("cyber_tileset"),
-    sourcePosition: new Vector2(361, 16),
-    sourceDimensions: new Vector2(85, 96),
-    rotation: 0,
-    scale: Vector2.One,
-    origin: Vector2.Zero,
-    actorType: ActorType.Platform,
-    collisionType: CollisionType.Collidable,
-    layerDepth: 0,
-    explodeBoundingBoxInPixels: -6,
 
-    // We have just one platform sprite, so it makes sense to
-    // store a list of positions at which we want to place that
-    // sprite in our game world. Mess around with these values
-    // by either adding or removing positions from our array, or
-    // by editing the x, y values of each position. Check out the 
-    // results by refreshing the web page!
-    translationArray: [
+      new Vector2(-160, 400),
+      new Vector2(-160, 350),
+      new Vector2(-160, 300),
+      new Vector2(-160, 250),
+      new Vector2(-160, 200),
+      new Vector2(-160, 150),
+      new Vector2(-160, 100),
 
-      /****************** Screen 1 *******************/
-
-      // Floor
-      new Vector2(0, 400),
-      new Vector2(160, 400),
-      new Vector2(320, 400),
-      new Vector2(480, 400),
-      new Vector2(640, 400),
-      new Vector2(800, 400),
+      new Vector2(800, 350),
+      new Vector2(800, 300),
+      new Vector2(800, 250),
+      new Vector2(800, 200),
+      new Vector2(800, 150),
+      new Vector2(800, 100)
     ]
     
   };
@@ -202,10 +192,11 @@ class GameData {
     }
   };
 
-  static RUNNER_START_POSITION = new Vector2(80, 250);
+  static RUNNER_START_POSITION = new Vector2(50, 350);
   static RUNNER_MOVE_KEYS = [Keys.A, Keys.D, Keys.Space];
   static RUNNER_RUN_VELOCITY = 0.1;
-  static RUNNER_JUMP_VELOCITY = 0.5;
+  static RUNNER_JUMP_VELOCITY = 0.4;
+  static MAX_SPEED = 5;
 
   static RUNNER_ANIMATION_DATA = {
 
@@ -309,106 +300,7 @@ class GameData {
     }
   };
 
-  // static RUNNER_ANIMATION_DATA = {
-
-  //   id: "Runner Animation Data",
-  //   spriteSheet: document.getElementById("kat_sprite_sheet"),
-
-  //   // Animations
-  //   takes: {
-
-  //     // Animation 1
-  //     "Idle": {
-
-  //       frameRatePerSec: 2,
-
-  //       // -1 = Loop forever
-  //       //  0 = Run once (no loop)
-  //       //  N = Loop N times
-  //       maxLoopCount: -1,
-
-  //       startFrameIndex: 0,
-  //       endFrameIndex: 0,
-
-  //       // Notice that I chose the largest of all the widths taken from the frames
-  //       // array below
-  //       boundingBoxDimensions: new Vector2(49, 34),
-
-  //       frames: [
-
-  //         // This list of rects just represent the positions
-  //         // and dimension of each individual animation frame
-  //         // on the sprite sheet
-  //         new Rect(194, 0, 38, 30),    // Animation frame 2
-  //       ]
-  //     },
-
-  //     // Animation 2
-  //     "Run Left": {
-
-  //       frameRatePerSec: 12,
-
-  //       // -1 = Loop forever
-  //       //  0 = Run once (no loop)
-  //       //  N = Loop N times
-  //       maxLoopCount: -1,
-
-  //       startFrameIndex: 0,
-  //       endFrameIndex: 7,
-
-  //       // Notice that I chose the largest of all the widths taken from the frames
-  //       // array below
-  //       boundingBoxDimensions: new Vector2(49, 34),
-
-  //       frames: [
-
-  //         new Rect(190, 36, 36, 28),   // Animation frame 1
-  //         new Rect(234, 34, 36, 30),   // Animation frame 2
-  //         new Rect(0, 76, 40, 24),   // Animation frame 3
-  //         new Rect(48, 76, 40, 24),   // Animation frame 4
-  //         new Rect(94, 74, 49, 54),   // Animation frame 5
-  //         new Rect(138, 72, 40, 28),    // Animation frame 6
-  //         new Rect(186, 68, 38, 30),    // Animation frame 7
-  //         new Rect(230, 72, 38, 26)      // Animation frame 8
-  //       ]
-  //     },
-
-  //     // Animation 3
-  //     "Run Right": {
-
-  //       frameRatePerSec: 12,
-
-  //       // -1 = Loop forever
-  //       //  0 = Run once (no loop)
-  //       //  N = Loop N times
-  //       maxLoopCount: -1,
-
-  //       startFrameIndex: 0,
-  //       endFrameIndex: 7,
-
-  //       // Notice that I chose the largest of all the widths taken from the frames
-  //       // array below
-  //       boundingBoxDimensions: new Vector2(49, 34),
-
-  //       frames: [
-
-  //         // This list of rects just represent the positions
-  //         // and dimension of each individual animation frame
-  //         // on the sprite sheet
-
-  //         new Rect(190, 36, 36, 28),   // Animation frame 1
-  //         new Rect(234, 34, 36, 30),   // Animation frame 2
-  //         new Rect(0, 76, 40, 24),   // Animation frame 3
-  //         new Rect(48, 76, 40, 24),   // Animation frame 4
-  //         new Rect(94, 74, 49, 54),   // Animation frame 5
-  //         new Rect(138, 72, 40, 28),    // Animation frame 6
-  //         new Rect(186, 68, 38, 30),    // Animation frame 7
-  //         new Rect(230, 72, 38, 26)      // Animation frame 8
-  //       ]
-  //     },
-  //   }
-  // };
-
+  
   static ENEMY_ANIMATION_DATA = {
 
     id: "Enemy Animation Data",
@@ -442,9 +334,6 @@ class GameData {
           new Rect(150, 3, 31, 48),
           new Rect(77, 4, 29, 48),
           new Rect(16, 4, 34, 48)
-
-
-
         ]
       }
     }
@@ -453,6 +342,6 @@ class GameData {
 
 const FontType = {
   InformationSmall: "12px Arial",
-  InformationMedium: "18px Arial",
+  InformationMedium: "18px Audiowide",
   InformationLarge: "24px Arial"
 };
