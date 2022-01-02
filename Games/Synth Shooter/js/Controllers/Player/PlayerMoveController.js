@@ -233,21 +233,13 @@ class PlayerMoveController {
                 );
                 
 
-                notificationCenter.notify(
-                    new Notification(
-                        NotificationType.Sound,
-                        NotificationAction.Play,
-                        ["jump"]
-                    )
-                );
-
-                notificationCenter.notify(
-                    new Notification(
-                        NotificationType.Sprite,
-                        NotificationAction.RemoveFirstBy,
-                        [ActorType.Platform, platform => platform.transform.translation.y > 500 && platform.transform.translation.x > 500]
-                    )
-                );
+                // notificationCenter.notify(
+                //     new Notification(
+                //         NotificationType.Sprite,
+                //         NotificationAction.RemoveFirstBy,
+                //         [ActorType.Platform, platform => platform.transform.translation.y > 500 && platform.transform.translation.x > 500]
+                //     )
+                // );
             }
         }
     }

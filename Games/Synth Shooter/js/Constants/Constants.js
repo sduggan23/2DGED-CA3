@@ -55,7 +55,7 @@ class GameData {
     }
   ];
 
-  static PLATFORM_DATA = {
+  static GROUND_PLATFORM_DATA = {
     id: "Platform",
     spriteSheet: document.getElementById("cyber_tileset"),
     sourcePosition: new Vector2(0, 16),
@@ -76,39 +76,184 @@ class GameData {
     // results by refreshing the web page!
     translationArray: [
 
-      /****************** Screen 1 *******************/
+      /****************** Ground *******************/
 
-      // Floor
       new Vector2(0, 400),
       new Vector2(160, 400),
-      // new Vector2(320, 400),
+      //new Vector2(320, 400),
       new Vector2(480, 400),
-      new Vector2(640, 400),
-      new Vector2(800, 400),
+      new Vector2(640, 400), 
+      //new Vector2(800, 400),
       new Vector2(960, 400),
-      new Vector2(1120, 400),
+
+      // new Vector2(1120, 400),
       new Vector2(1280, 400),
       new Vector2(1440, 400),
-      new Vector2(1600, 400),
+      // new Vector2(1600, 400),
       new Vector2(1760, 400),
       new Vector2(1920, 400),
       new Vector2(2080, 400),
 
+      new Vector2(2240, 400),
+      // new Vector2(2400, 400),
+      new Vector2(2560, 400),
+      new Vector2(2720, 400),
+      // new Vector2(2880, 400),
+      new Vector2(3040, 400),
+      new Vector2(3200, 400),
 
-      new Vector2(-160, 400),
-      new Vector2(-160, 350),
-      new Vector2(-160, 300),
-      new Vector2(-160, 250),
-      new Vector2(-160, 200),
-      new Vector2(-160, 150),
-      new Vector2(-160, 100),
+      new Vector2(3360, 400),
+      new Vector2(3520, 400),
+      new Vector2(3680, 400),
+      new Vector2(3840, 400),
+      new Vector2(4000, 400),
+      new Vector2(4160, 400),
 
-      new Vector2(800, 350),
-      new Vector2(800, 300),
-      new Vector2(800, 250),
-      new Vector2(800, 200),
-      new Vector2(800, 150),
-      new Vector2(800, 100)
+      new Vector2(4320, 400),
+      new Vector2(4480, 400),
+      new Vector2(4640, 400),
+      new Vector2(4800, 400),
+      new Vector2(4960, 400),
+      new Vector2(5120, 400),
+      new Vector2(4280, 400)
+
+      //new Vector2(240, 250),
+
+      // new Vector2(800, 350),
+      // new Vector2(800, 300),
+      // new Vector2(800, 250),
+      // new Vector2(800, 200),
+      // new Vector2(800, 150),
+      // new Vector2(800, 100)
+
+
+    ]
+    
+  };
+
+  static LARGE_BUILDING_PLATFORM_DATA = {
+    id: "Platform",
+    spriteSheet: document.getElementById("cyber_tileset"),
+    sourcePosition: new Vector2(471, 16),
+    sourceDimensions: new Vector2(137, 96),
+    rotation: 0,
+    scale: new Vector2(1.165, 1),
+    origin: Vector2.Zero,
+    actorType: ActorType.Platform,
+    collisionType: CollisionType.Collidable,
+    layerDepth: 0,
+    explodeBoundingBoxInPixels: -6,
+
+    translationArray: [
+
+      /****************** Buildings *******************/
+
+      // Left Edge
+      new Vector2(-159, 400),
+      new Vector2(-159, 350),
+      new Vector2(-159, 300),
+      new Vector2(-159, 250),
+      new Vector2(-159, 200),
+      new Vector2(-159, 150),
+      new Vector2(-159, 100),
+
+      new Vector2(-320, 400),
+      new Vector2(-320, 350),
+      new Vector2(-320, 300),
+      new Vector2(-320, 250),
+      new Vector2(-320, 200),
+      new Vector2(-320, 150),
+      new Vector2(-320, 100),
+
+      new Vector2(-480, 400),
+      new Vector2(-480, 350),
+      new Vector2(-480, 300),
+      new Vector2(-480, 250),
+      new Vector2(-480, 200),
+      new Vector2(-480, 150),
+      new Vector2(-480, 100),
+
+      new Vector2(-640, 400),
+      new Vector2(-640, 350),
+      new Vector2(-640, 300),
+      new Vector2(-640, 250),
+      new Vector2(-640, 200),
+      new Vector2(-640, 150),
+      new Vector2(-640, 100),
+
+      new Vector2(-800, 400),
+      new Vector2(-800, 350),
+      new Vector2(-800, 300),
+      new Vector2(-800, 250),
+      new Vector2(-800, 200),
+      new Vector2(-800, 150),
+      new Vector2(-800, 100),
+
+      // Platforms
+       new Vector2(320, 375)
+
+
+    ]
+  };
+
+  static BUILDING_PLATFORM_DATA = {
+    id: "Platform",
+    spriteSheet: document.getElementById("cyber_tileset"),
+    sourcePosition: new Vector2(360, 16),
+    sourceDimensions: new Vector2(85, 96),
+    rotation: 0,
+    scale: Vector2.One,
+    origin: Vector2.Zero,
+    actorType: ActorType.Platform,
+    collisionType: CollisionType.Collidable,
+    layerDepth: 0,
+    explodeBoundingBoxInPixels: -6,
+
+    translationArray: [
+
+      /****************** Buildings *******************/
+
+
+
+      // Platforms
+      new Vector2(550, 400),
+      new Vector2(550, 375),
+
+      new Vector2(720, 400),
+      new Vector2(720, 375),
+      new Vector2(720, 350),
+
+      new Vector2(900, 350),
+      new Vector2(900, 400),
+
+
+
+
+
+
+    ]
+  };
+
+  static PLATFORM_DATA = {
+    id: "Platform",
+    spriteSheet: document.getElementById("cyber_tileset"),
+    sourcePosition: new Vector2(185, 80),
+    sourceDimensions: new Vector2(85, 43),
+    rotation: 0,
+    scale: Vector2.One,
+    origin: Vector2.Zero,
+    actorType: ActorType.Platform,
+    collisionType: CollisionType.Collidable,
+    layerDepth: 0,
+    explodeBoundingBoxInPixels: -6,
+
+    translationArray: [
+
+      new Vector2(240, 200),
+      new Vector2(295, 200),
+      new Vector2(350, 200)
+
+
     ]
     
   };
