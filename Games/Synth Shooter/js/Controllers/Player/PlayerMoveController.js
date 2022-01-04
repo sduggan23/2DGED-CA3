@@ -95,13 +95,13 @@ class PlayerMoveController {
             parent.body.setVelocityY(-this.jumpVelocity * gameTime.elapsedTimeInMs);
 
             // Create a jump sound notification
-            notificationCenter.notify(
-                new Notification(
-                    NotificationType.Sound,
-                    NotificationAction.Play,
-                    ["jump"]
-                )
-            );
+            // notificationCenter.notify(
+            //     new Notification(
+            //         NotificationType.Sound,
+            //         NotificationAction.Play,
+            //         ["jump"]
+            //     )
+            // );
         }
     }
 

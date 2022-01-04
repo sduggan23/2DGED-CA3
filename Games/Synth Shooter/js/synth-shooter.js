@@ -235,7 +235,7 @@ function initializeCameras() {
                 Keys.Numpad4, Keys.Numpad6, Keys.Numpad7, Keys.Numpad9,
                 Keys.Numpad8, Keys.Numpad2, Keys.Numpad5
             ],
-            new Vector2(2, 0),
+            new Vector2(2.25, 0),
             Math.PI / 180,
             new Vector2(0.005, 0.005)
         )
@@ -248,7 +248,6 @@ function initializeSprites() {
 
     initializeBackground();
     initializeGroundPlatforms();
-    initializeBuildingPlatforms();
     initializeLargeBuildingPlatforms();
     initializePlatforms();
     initializePickups();
@@ -362,63 +361,6 @@ function initializeGroundPlatforms() {
 
         // Update translation
         spriteClone.transform.setTranslation(GameData.GROUND_PLATFORM_DATA.translationArray[i]);
-
-        // Add to object manager
-        objectManager.add(spriteClone);
-    }
-}
-
-function initializeBuildingPlatforms() {
-
-    let artist;
-    let transform;
-
-    let spriteArchetype;
-    let spriteClone = null;
-
-    artist = new SpriteArtist(
-        context,
-        1,
-        GameData.BUILDING_PLATFORM_DATA.spriteSheet,
-        GameData.BUILDING_PLATFORM_DATA.sourcePosition,
-        GameData.BUILDING_PLATFORM_DATA.sourceDimensions
-    );
-
-    transform = new Transform2D(
-        Vector2.Zero,
-        GameData.BUILDING_PLATFORM_DATA.rotation,
-        GameData.BUILDING_PLATFORM_DATA.scale,
-        GameData.BUILDING_PLATFORM_DATA.origin,
-        GameData.BUILDING_PLATFORM_DATA.sourceDimensions,
-        GameData.BUILDING_PLATFORM_DATA.explodeBoundingBoxInPixels
-    );
-
-    spriteArchetype = new Sprite(
-        GameData.BUILDING_PLATFORM_DATA.id,
-        transform,
-        GameData.BUILDING_PLATFORM_DATA.actorType,
-        GameData.BUILDING_PLATFORM_DATA.collisionType,
-        StatusType.Updated | StatusType.Drawn,
-        artist,
-        GameData.BUILDING_PLATFORM_DATA.scrollSpeedMultiplier,
-        GameData.BUILDING_PLATFORM_DATA.layerDepth
-    );
-
-    // Check out the Constant.js file - it contains an object called
-    // PLATFORM_DATA, which contains an array property called translationArray.
-    // This translationArray simply contains a list of positions for where we
-    // want to position the platforms on our screen. Take a look at this array
-    // to understand more.
-    for (let i = 0; i < GameData.BUILDING_PLATFORM_DATA.translationArray.length; i++) {
-
-        // Clone sprite
-        spriteClone = spriteArchetype.clone();
-
-        // Update id
-        spriteClone.id = spriteClone.id + " " + i;
-
-        // Update translation
-        spriteClone.transform.setTranslation(GameData.BUILDING_PLATFORM_DATA.translationArray[i]);
 
         // Add to object manager
         objectManager.add(spriteClone);

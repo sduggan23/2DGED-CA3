@@ -84,40 +84,48 @@ class GameData {
       new Vector2(480, 400),
       new Vector2(640, 400), 
       //new Vector2(800, 400),
-      new Vector2(960, 400),
+      //new Vector2(960, 400),
 
       // new Vector2(1120, 400),
       new Vector2(1280, 400),
       new Vector2(1440, 400),
       // new Vector2(1600, 400),
       new Vector2(1760, 400),
-      new Vector2(1920, 400),
+      //new Vector2(1920, 400),
       new Vector2(2080, 400),
 
       new Vector2(2240, 400),
       // new Vector2(2400, 400),
       new Vector2(2560, 400),
-      new Vector2(2720, 400),
-      // new Vector2(2880, 400),
+      //new Vector2(2720, 400),
+      new Vector2(2880, 400),
       new Vector2(3040, 400),
       new Vector2(3200, 400),
 
-      new Vector2(3360, 400),
-      new Vector2(3520, 400),
-      new Vector2(3680, 400),
-      new Vector2(3840, 400),
-      new Vector2(4000, 400),
-      new Vector2(4160, 400),
+      //new Vector2(3360, 400),
+      //new Vector2(3520, 400),
+      //new Vector2(3680, 400),
+      //new Vector2(3840, 400),
+      //new Vector2(4000, 400),
+      //new Vector2(4160, 400),
 
       new Vector2(4320, 400),
-      new Vector2(4480, 400),
-      new Vector2(4640, 400),
-      new Vector2(4800, 400),
-      new Vector2(4960, 400),
-      new Vector2(5120, 400),
-      new Vector2(4280, 400)
+      // new Vector2(4480, 400),
+      // new Vector2(4640, 400),
+      // new Vector2(4800, 400),
+      // new Vector2(4960, 400),
+      // new Vector2(5120, 400),
+      // new Vector2(5280, 400),
 
-      //new Vector2(240, 250),
+      new Vector2(5600, 400),
+      new Vector2(5760, 400),
+      new Vector2(5920, 400),
+      // new Vector2(6080, 400),
+      // new Vector2(6240, 400),
+      // new Vector2(6400, 400),
+      // new Vector2(6560, 400)
+
+      // new Vector2(240, 250),
 
       // new Vector2(800, 350),
       // new Vector2(800, 300),
@@ -190,45 +198,70 @@ class GameData {
       new Vector2(-800, 100),
 
       // Platforms
-       new Vector2(320, 375)
+       new Vector2(320, 375),
 
+       new Vector2(640, 400),
+       new Vector2(640, 350),
 
-    ]
-  };
+       new Vector2(960, 375),
 
-  static BUILDING_PLATFORM_DATA = {
-    id: "Platform",
-    spriteSheet: document.getElementById("cyber_tileset"),
-    sourcePosition: new Vector2(360, 16),
-    sourceDimensions: new Vector2(85, 96),
-    rotation: 0,
-    scale: Vector2.One,
-    origin: Vector2.Zero,
-    actorType: ActorType.Platform,
-    collisionType: CollisionType.Collidable,
-    layerDepth: 0,
-    explodeBoundingBoxInPixels: -6,
+       new Vector2(1920, 400),
+       new Vector2(1920, 350),
 
-    translationArray: [
+       new Vector2(3200,400),
+       new Vector2(3200,350),
 
-      /****************** Buildings *******************/
+       new Vector2(3360,400),
+       new Vector2(3360,350),
+       new Vector2(3360,300),
 
+       new Vector2(3520,400),
+       new Vector2(3520,350),
+       new Vector2(3520,300),
+       new Vector2(3520,250),
 
+      //  new Vector2(3680,400),
+      //  new Vector2(3680,350),
+      //  new Vector2(3680,305),
 
-      // Platforms
-      new Vector2(550, 400),
-      new Vector2(550, 375),
+       new Vector2(3840,400),
+       new Vector2(3840,350),
+       new Vector2(3840,300),
+       new Vector2(3840,250),
 
-      new Vector2(720, 400),
-      new Vector2(720, 375),
-      new Vector2(720, 350),
+       new Vector2(4000,400),
+       new Vector2(4000,350),
+       new Vector2(4000,300),
 
-      new Vector2(900, 350),
-      new Vector2(900, 400),
+       new Vector2(4160,400),
+       new Vector2(4160,350),
 
+      //  new Vector2(4480,400),
+      //  new Vector2(4480,350),
 
+      //  new Vector2(4640,400),
+      //  new Vector2(4640,350),
+      //  new Vector2(4640,300),
 
+      //  new Vector2(4800,400),
+      //  new Vector2(4800,350),
+      //  new Vector2(4800,300),
+      //  new Vector2(4800,250),
 
+      //  new Vector2(5120,400),
+      //  new Vector2(5120,350),
+      //  new Vector2(5120,300),
+      //  new Vector2(5120,250),
+
+      //  new Vector2(5280,400),
+      //  new Vector2(5280,350),
+      //  new Vector2(5280,300),
+
+      //  new Vector2(5440,400),
+      //  new Vector2(5440,350),
+
+      //  new Vector2(5760, 400),
+      //  new Vector2(5760, 350)
 
 
     ]
