@@ -284,7 +284,35 @@ class GameData {
 
       new Vector2(240, 200),
       new Vector2(295, 200),
-      new Vector2(350, 200)
+      new Vector2(350, 200),
+
+      new Vector2(1365, 300),
+      new Vector2(1410, 300),
+
+      new Vector2(1495, 225),
+      new Vector2(1545, 225),
+      new Vector2(1600, 225),
+
+      new Vector2(1785, 225),
+      new Vector2(1830, 225),
+
+      new Vector2(2165, 250),
+
+      new Vector2(2305, 250),
+
+      new Vector2(2445, 250),
+
+      new Vector2(2585, 250),
+
+      new Vector2(2780, 225),
+      new Vector2(2835, 225),
+
+      new Vector2(2975, 200),
+      new Vector2(3030, 200),
+      new Vector2(3085, 200)
+
+
+      
 
 
     ]
@@ -370,7 +398,7 @@ class GameData {
     }
   };
 
-  static RUNNER_START_POSITION = new Vector2(50, 350);
+  static RUNNER_START_POSITION = new Vector2(150, 350);
   static RUNNER_MOVE_KEYS = [Keys.A, Keys.D, Keys.Space];
   static RUNNER_RUN_VELOCITY = 0.1;
   static RUNNER_JUMP_VELOCITY = 0.4;
@@ -399,7 +427,7 @@ class GameData {
 
         // Notice that I chose the largest of all the widths taken from the frames
         // array below
-        boundingBoxDimensions: new Vector2(49, 54),
+        boundingBoxDimensions: new Vector2(49, 50),
 
         frames: [
 
