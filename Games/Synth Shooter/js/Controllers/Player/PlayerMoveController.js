@@ -237,7 +237,7 @@ class PlayerMoveController {
                 //     new Notification(
                 //         NotificationType.Sprite,
                 //         NotificationAction.RemoveFirstBy,
-                //         [ActorType.Platform, platform => platform.transform.translation.y > 500 && platform.transform.translation.x > 500]
+                //         [ActorType.Platform2, platform2 => platform2.transform.translation.x > 500]
                 //     )
                 // );
             }

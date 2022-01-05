@@ -110,7 +110,7 @@ class GameData {
       //new Vector2(4000, 400),
       //new Vector2(4160, 400),
 
-      new Vector2(4320, 400),
+      // new Vector2(4320, 400),
       // new Vector2(4480, 400),
       // new Vector2(4640, 400),
       // new Vector2(4800, 400),
@@ -118,22 +118,13 @@ class GameData {
       // new Vector2(5120, 400),
       // new Vector2(5280, 400),
 
-      new Vector2(5600, 400),
-      new Vector2(5760, 400),
-      new Vector2(5920, 400),
+      // new Vector2(5600, 400),
+      // new Vector2(5760, 400),
+      // new Vector2(5920, 400),
       // new Vector2(6080, 400),
       // new Vector2(6240, 400),
       // new Vector2(6400, 400),
       // new Vector2(6560, 400)
-
-      // new Vector2(240, 250),
-
-      // new Vector2(800, 350),
-      // new Vector2(800, 300),
-      // new Vector2(800, 250),
-      // new Vector2(800, 200),
-      // new Vector2(800, 150),
-      // new Vector2(800, 100)
 
 
     ]
@@ -237,6 +228,8 @@ class GameData {
        new Vector2(4160,400),
        new Vector2(4160,350),
 
+       new Vector2(4320, 400),
+
       //  new Vector2(4480,400),
       //  new Vector2(4480,350),
 
@@ -301,7 +294,7 @@ class GameData {
 
       new Vector2(2305, 250),
 
-      new Vector2(2445, 250),
+      new Vector2(2445, 235),
 
       new Vector2(2585, 250),
 
@@ -311,11 +304,6 @@ class GameData {
       new Vector2(2975, 200),
       new Vector2(3030, 200),
       new Vector2(3085, 200)
-
-
-      
-
-
     ]
     
   };
@@ -323,47 +311,33 @@ class GameData {
   static COLLECTIBLES_ANIMATION_DATA = {
     id: "Collectibles Animation Data",
     spriteSheet: document.getElementById("snailbait_sprite_sheet"),
-
-    sourcePosition: new Vector2(185, 80),
-    sourceDimensions: new Vector2(85, 43),
+    sourcePosition: new Vector2(10, 195),
+    sourceDimensions: new Vector2(35, 22),
     rotation: 0,
     scale: Vector2.One,
     origin: Vector2.Zero,
-    actorType: ActorType.Platform,
+    actorType: ActorType.Pickup,
     collisionType: CollisionType.Collidable,
     layerDepth: 0,
     explodeBoundingBoxInPixels: -6,
 
-    // List of animations
-    takes: {
-
-      // Animation 3
-      "Gold Glint": {
-
-        frameRatePerSec: 1,
-
-        // -1 = Loop forever
-        //  0 = Run once (no loop)
-        //  N = Loop N times
-        maxLoopCount: -1,
-
-        startFrameIndex: 0,
-        endFrameIndex: 1,
-
-        boundingBoxDimensions: new Vector2(30, 30),
-
-        frames: [
-          new Rect(10, 195, 35, 22),
-          new Rect(94, 195, 35, 21)
-        ]
-      }
-    }
+    translationArray: [
+      new Vector2(320, 195),
+      new Vector2(1410, 295),
+      new Vector2(1830, 220),
+      new Vector2(2325, 245),
+      new Vector2(3050, 195),
+      new Vector2(4520, 350)
+    ]
+    
   };
+
+
 
   static RUNNER_START_POSITION = new Vector2(150, 350);
   static RUNNER_MOVE_KEYS = [Keys.A, Keys.D, Keys.Space];
   static RUNNER_RUN_VELOCITY = 0.1;
-  static RUNNER_JUMP_VELOCITY = 0.4;
+  static RUNNER_JUMP_VELOCITY = 0.8;
   static MAX_SPEED = 5;
 
   static RUNNER_ANIMATION_DATA = {

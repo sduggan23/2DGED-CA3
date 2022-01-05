@@ -19,7 +19,7 @@ let menuManager;
 let uiManager;
 
 // Set to false to hide bounding boxes
-const debugMode = true;
+const debugMode = false;
 
 function start() {
 
@@ -481,80 +481,59 @@ function initializePlatforms() {
     }
 }
 
+
+
 function initializePickups() {
 
     let artist;
     let transform;
 
-    let spriteArchetype = null;
+    let spriteArchetype;
     let spriteClone = null;
 
-    artist = new AnimatedSpriteArtist(
-        context,                                        // Context
-
-        // Don't be afraid to edit the alpha value! This allows you to make
-        // certain objects transparent, opaque, or semi-transparent. The
-        // range of values for alpha is [0, 1].
+    artist = new SpriteArtist(
+        context,
         1,
-
-        GameData.COLLECTIBLES_ANIMATION_DATA            // Animation data
+        GameData.COLLECTIBLES_ANIMATION_DATA.spriteSheet,
+        GameData.COLLECTIBLES_ANIMATION_DATA.sourcePosition,
+        GameData.COLLECTIBLES_ANIMATION_DATA.sourceDimensions
     );
 
     transform = new Transform2D(
-        new Vector2(0, 200),                          // Translation
-        0,                                              // Rotation
-        Vector2.One,                                    // Scale
-        Vector2.Zero,                                   // Origin
-        artist.getBoundingBoxByTakeName("Gold Glint"),  // Dimensions
-
-        // The explode by value determines how much bigger (or smaller) the
-        // collision box should be for a particular sprite. Edit this value
-        // to see what results you get. Make sure the debug mod is enabled
-        // so that collision boxes are drawn on-screen.
-
-        // It is important to note that the below explode by value must be
-        // an even number. The explode by value can be positive (to make the 
-        // sprite's collision box larger), or negative (to make the sprite's
-        // collision box smaller). Leave the value as 0 if you would like 
-        // the collision box to match the size of the sprite.
-        0
+        Vector2.Zero,
+        GameData.COLLECTIBLES_ANIMATION_DATA.rotation,
+        GameData.COLLECTIBLES_ANIMATION_DATA.scale,
+        GameData.COLLECTIBLES_ANIMATION_DATA.origin,
+        GameData.COLLECTIBLES_ANIMATION_DATA.sourceDimensions,
+        GameData.COLLECTIBLES_ANIMATION_DATA.explodeBoundingBoxInPixels
     );
 
     spriteArchetype = new Sprite(
-        "Gold",
+        GameData.COLLECTIBLES_ANIMATION_DATA.id,
         transform,
-        ActorType.Pickup,
-        CollisionType.Collidable,
+        GameData.COLLECTIBLES_ANIMATION_DATA.actorType,
+        GameData.COLLECTIBLES_ANIMATION_DATA.collisionType,
         StatusType.Updated | StatusType.Drawn,
         artist,
-
-        // The below values (scroll speed multipler and layer depth) are
-        // primarily used to create parallax effects. See the initialize
-        // background function to get an idea of how they are used.
-
-        1,          // Scroll speed multiplier
-        1           // Layer depth
+        GameData.COLLECTIBLES_ANIMATION_DATA.scrollSpeedMultiplier,
+        GameData.COLLECTIBLES_ANIMATION_DATA.layerDepth
     );
 
-    // Create 5 pickup sprites
-    for (let i = 1; i <= 5; i++) {
+    // Check out the Constant.js file - it contains an object called
+    // PLATFORM_DATA, which contains an array property called translationArray.
+    // This translationArray simply contains a list of positions for where we
+    // want to position the platforms on our screen. Take a look at this array
+    // to understand more.
+    for (let i = 0; i < GameData.COLLECTIBLES_ANIMATION_DATA.translationArray.length; i++) {
 
         // Clone sprite
         spriteClone = spriteArchetype.clone();
 
-        // Update ID
+        // Update id
         spriteClone.id = spriteClone.id + " " + i;
 
-        // Translate sprite
-        spriteClone.transform.translateBy(
-            new Vector2(
-                (i * 550),
-                0
-            )
-        );
-
-        // Set sprite take
-        spriteClone.artist.setTake("Gold Glint");
+        // Update translation
+        spriteClone.transform.setTranslation(GameData.COLLECTIBLES_ANIMATION_DATA.translationArray[i]);
 
         // Add to object manager
         objectManager.add(spriteClone);
