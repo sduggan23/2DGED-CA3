@@ -233,13 +233,13 @@ class PlayerMoveController {
                 );
                 
 
-                // notificationCenter.notify(
-                //     new Notification(
-                //         NotificationType.Sprite,
-                //         NotificationAction.RemoveFirstBy,
-                //         [ActorType.Platform2, platform2 => platform2.transform.translation.x > 500]
-                //     )
-                // );
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sprite,
+                        NotificationAction.RemoveFirstBy,
+                        [ActorType.Platform, platform =>  platform.transform.translation.y == 0]
+                    )
+                );
             }
         }
     }

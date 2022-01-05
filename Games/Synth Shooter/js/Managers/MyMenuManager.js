@@ -106,13 +106,13 @@ class MyMenuManager extends MenuManager {
                 )
             );
 
-            // notificationCenter.notify(
-            //     new Notification(
-            //         NotificationType.Sound,
-            //         NotificationAction.Play,
-            //         ["background"]
-            //     )
-            // );
+            notificationCenter.notify(
+                new Notification(
+                    NotificationType.Sound,
+                    NotificationAction.Play,
+                    ["background"]
+                )
+            );
         });
 
         // If the audio button is clicked

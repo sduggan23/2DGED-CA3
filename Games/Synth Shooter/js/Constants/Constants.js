@@ -181,14 +181,6 @@ class GameData {
       new Vector2(-640, 150),
       new Vector2(-640, 100),
 
-      new Vector2(-800, 400),
-      new Vector2(-800, 350),
-      new Vector2(-800, 300),
-      new Vector2(-800, 250),
-      new Vector2(-800, 200),
-      new Vector2(-800, 150),
-      new Vector2(-800, 100),
-
       // Platforms
        new Vector2(320, 375),
 
@@ -326,12 +318,39 @@ class GameData {
       new Vector2(1410, 295),
       new Vector2(1830, 220),
       new Vector2(2325, 245),
-      new Vector2(3050, 195),
-      new Vector2(4520, 350)
+      new Vector2(3050, 195)
+      // new Vector2(4520, 350)
     ]
     
   };
 
+    static LASER_GATE_DATA = {
+    id: "Platform",
+    spriteSheet: document.getElementById("laser_sprite_sheet"),
+    sourcePosition: new Vector2(80, 0),
+    sourceDimensions: new Vector2(35,200),
+    rotation: 0,
+    scale: new Vector2(1, 2),
+    origin: Vector2.Zero,
+    actorType: ActorType.Platform,
+    collisionType: CollisionType.Collidable,
+    layerDepth: 0,
+    explodeBoundingBoxInPixels: -6,
+
+    translationArray: [
+
+      new Vector2(600, 0),
+      new Vector2(1700, 0),
+      new Vector2(2100, 0),
+      new Vector2(3250, 0),
+      new Vector2(3300, 0),
+      
+      
+      
+
+    ]
+    
+  };
 
 
   static RUNNER_START_POSITION = new Vector2(150, 350);

@@ -19,7 +19,7 @@ let menuManager;
 let uiManager;
 
 // Set to false to hide bounding boxes
-const debugMode = false;
+const debugMode = true;
 
 function start() {
 
@@ -249,6 +249,7 @@ function initializeSprites() {
     initializeBackground();
     initializeGroundPlatforms();
     initializeLargeBuildingPlatforms();
+    initializeLaserGates();
     initializePlatforms();
     initializePickups();
     initializePlayer();
@@ -481,7 +482,62 @@ function initializePlatforms() {
     }
 }
 
+function initializeLaserGates() {
 
+    let artist;
+    let transform;
+
+    let spriteArchetype;
+    let spriteClone = null;
+
+    artist = new SpriteArtist(
+        context,
+        1,
+        GameData.LASER_GATE_DATA.spriteSheet,
+        GameData.LASER_GATE_DATA.sourcePosition,
+        GameData.LASER_GATE_DATA.sourceDimensions
+    );
+
+    transform = new Transform2D(
+        Vector2.Zero,
+        GameData.LASER_GATE_DATA.rotation,
+        GameData.LASER_GATE_DATA.scale,
+        GameData.LASER_GATE_DATA.origin,
+        GameData.LASER_GATE_DATA.sourceDimensions,
+        GameData.LASER_GATE_DATA.explodeBoundingBoxInPixels
+    );
+
+    spriteArchetype = new Sprite(
+        GameData.LASER_GATE_DATA.id,
+        transform,
+        GameData.LASER_GATE_DATA.actorType,
+        GameData.LASER_GATE_DATA.collisionType,
+        StatusType.Updated | StatusType.Drawn,
+        artist,
+        GameData.LASER_GATE_DATA.scrollSpeedMultiplier,
+        GameData.LASER_GATE_DATA.layerDepth
+    );
+
+    // Check out the Constant.js file - it contains an object called
+    // PLATFORM_DATA, which contains an array property called translationArray.
+    // This translationArray simply contains a list of positions for where we
+    // want to position the platforms on our screen. Take a look at this array
+    // to understand more.
+    for (let i = 0; i < GameData.LASER_GATE_DATA.translationArray.length; i++) {
+
+        // Clone sprite
+        spriteClone = spriteArchetype.clone();
+
+        // Update id
+        spriteClone.id = spriteClone.id + " " + i;
+
+        // Update translation
+        spriteClone.transform.setTranslation(GameData.LASER_GATE_DATA.translationArray[i]);
+
+        // Add to object manager
+        objectManager.add(spriteClone);
+    }
+}
 
 function initializePickups() {
 
