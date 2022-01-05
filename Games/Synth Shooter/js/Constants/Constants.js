@@ -3,11 +3,12 @@ class GameData {
   static AUDIO_CUE_ARRAY = [
     new AudioCue("background", AudioType.Background, 1, 1, 0, true),
     new AudioCue("jump", AudioType.Move, 1, 1, 0, false),
-    new AudioCue("boing", AudioType.All, 1, 1, 0, false),
+    new AudioCue("collectable", AudioType.All, 1, 1, 0, false),
     new AudioCue("game_over", AudioType.WinLose, 1, 1, 0, false),
   ];
 
   static BACKGROUND_DIMENSIONS = new Vector2(250, 190);
+  static CAMERA_SPEED = 2.25;
 
   static BACKGROUND_DATA = [
 
@@ -323,61 +324,23 @@ class GameData {
     id: "Collectibles Animation Data",
     spriteSheet: document.getElementById("snailbait_sprite_sheet"),
 
+    sourcePosition: new Vector2(185, 80),
+    sourceDimensions: new Vector2(85, 43),
+    rotation: 0,
+    scale: Vector2.One,
+    origin: Vector2.Zero,
+    actorType: ActorType.Platform,
+    collisionType: CollisionType.Collidable,
+    layerDepth: 0,
+    explodeBoundingBoxInPixels: -6,
+
     // List of animations
     takes: {
-
-      // Animation 1
-      "Sapphire Glint": {
-
-        frameRatePerSec: 6,
-
-        // -1 = Loop forever
-        //  0 = Run once (no loop)
-        //  N = Loop N times
-        maxLoopCount: -1,
-
-        startFrameIndex: 0,
-        endFrameIndex: 4,
-
-        boundingBoxDimensions: new Vector2(30, 35),
-
-        frames: [
-          new Rect(185, 138, 30, 35), // Frame 1
-          new Rect(220, 138, 30, 35), // Frame 2
-          new Rect(258, 138, 30, 35), // Frame 3
-          new Rect(294, 138, 30, 35), // Frame 4
-          new Rect(331, 138, 30, 35)  // Frame 5
-        ]
-      },
-
-      // Animation 2
-      "Ruby Glint": {
-
-        frameRatePerSec: 6,
-
-        // -1 = Loop forever
-        //  0 = Run once (no loop)
-        //  N = Loop N times
-        maxLoopCount: -1,
-
-        startFrameIndex: 0,
-        endFrameIndex: 4,
-
-        boundingBoxDimensions: new Vector2(30, 35),
-
-        frames: [
-          new Rect(3, 138, 30, 35),
-          new Rect(39, 138, 30, 35),
-          new Rect(76, 138, 30, 35),
-          new Rect(112, 138, 30, 35),
-          new Rect(148, 138, 30, 35)
-        ]
-      },
 
       // Animation 3
       "Gold Glint": {
 
-        frameRatePerSec: 6,
+        frameRatePerSec: 1,
 
         // -1 = Loop forever
         //  0 = Run once (no loop)
@@ -385,14 +348,13 @@ class GameData {
         maxLoopCount: -1,
 
         startFrameIndex: 0,
-        endFrameIndex: 2,
+        endFrameIndex: 1,
 
         boundingBoxDimensions: new Vector2(30, 30),
 
         frames: [
-          new Rect(65, 540, 30, 30),
-          new Rect(96, 540, 30, 30),
-          new Rect(128, 540, 30, 30)
+          new Rect(10, 195, 35, 22),
+          new Rect(94, 195, 35, 21)
         ]
       }
     }

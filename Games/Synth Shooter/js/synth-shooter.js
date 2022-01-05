@@ -235,7 +235,7 @@ function initializeCameras() {
                 Keys.Numpad4, Keys.Numpad6, Keys.Numpad7, Keys.Numpad9,
                 Keys.Numpad8, Keys.Numpad2, Keys.Numpad5
             ],
-            new Vector2(2.25, 0),
+            new Vector2(GameData.CAMERA_SPEED, 0),
             Math.PI / 180,
             new Vector2(0.005, 0.005)
         )
@@ -254,7 +254,7 @@ function initializeSprites() {
     initializePlayer();
     initializeEnemies();
 
-    initializeHUD();
+    //initializeHUD();
     initializeOnScreenText();
 }
 
@@ -501,7 +501,7 @@ function initializePickups() {
     );
 
     transform = new Transform2D(
-        new Vector2(0, 250),                          // Translation
+        new Vector2(0, 200),                          // Translation
         0,                                              // Rotation
         Vector2.One,                                    // Scale
         Vector2.Zero,                                   // Origin
@@ -548,7 +548,7 @@ function initializePickups() {
         // Translate sprite
         spriteClone.transform.translateBy(
             new Vector2(
-                (i * 150),
+                (i * 550),
                 0
             )
         );
@@ -658,7 +658,7 @@ function initializeEnemies() {
     artist.setTake("Drone Fly");
 
     transform = new Transform2D(
-        new Vector2(400, 200),
+        new Vector2(1000, 150),
         0,
         new Vector2(1, 1),
         Vector2.Zero,
@@ -718,7 +718,7 @@ function initializeEnemies() {
                     new Notification(
                         NotificationType.Sound,
                         NotificationAction.Play,
-                        ["boing"],
+                        ["collectable"],
                     )
                 );
 
@@ -741,56 +741,56 @@ function initializeEnemies() {
 // them in the constants file (which is better!).
 const uiSpriteSheet = document.getElementById("ui_sprite_sheet");
 
-function initializeHUD() {
+// function initializeHUD() {
 
-    let transform;
-    let artist;
-    let sprite;
+//     let transform;
+//     let artist;
+//     let sprite;
 
-    transform = new Transform2D(
-        new Vector2(
-            canvas.clientWidth - 40,
-            10
-        ),
-        0,
-        new Vector2(3, 3),
-        Vector2.Zero,
-        new Vector2(10, 10),
-        0
-    );
+//     transform = new Transform2D(
+//         new Vector2(
+//             canvas.clientWidth - 40,
+//             10
+//         ),
+//         0,
+//         new Vector2(3, 3),
+//         Vector2.Zero,
+//         new Vector2(10, 10),
+//         0
+//     );
 
-    artist = new SpriteArtist(
-        context,                                        // Context
-        1,                                              // Alpha
-        uiSpriteSheet,                                  // Spritesheet
-        Vector2.Zero,                                   // Source Position
-        new Vector2(32, 32),                            // Source Dimension
+//     artist = new SpriteArtist(
+//         context,                                        // Context
+//         1,                                              // Alpha
+//         uiSpriteSheet,                                  // Spritesheet
+//         Vector2.Zero,                                   // Source Position
+//         new Vector2(32, 32),                            // Source Dimension
         
-        // Set this to true if you want the sprite to stay in one
-        // position on the screen (i.e., the sprite WON'T scroll
-        // off-screen if the camera moves right or left).
+//         // Set this to true if you want the sprite to stay in one
+//         // position on the screen (i.e., the sprite WON'T scroll
+//         // off-screen if the camera moves right or left).
 
-        // Set this to false if you want the sprite to move with
-        // the world (i.e., the sprite WILL scroll off-screen when
-        // the camera moves to the right or to the left.
+//         // Set this to false if you want the sprite to move with
+//         // the world (i.e., the sprite WILL scroll off-screen when
+//         // the camera moves to the right or to the left.
 
-        true                                            // Fixed Position
-    );
+//         true                                            // Fixed Position
+//     );
 
-    sprite = new Sprite(
-        "Pause Button",
-        transform,
-        ActorType.HUD,
-        CollisionType.NotCollidable,
-        StatusType.Updated | StatusType.Drawn,
-        artist,
-        1,
-        1
-    );
+//     sprite = new Sprite(
+//         "Pause Button",
+//         transform,
+//         ActorType.HUD,
+//         CollisionType.NotCollidable,
+//         StatusType.Updated | StatusType.Drawn,
+//         artist,
+//         1,
+//         1
+//     );
 
-    // Add sprite to the object manager
-    objectManager.add(sprite);
-}
+//     // Add sprite to the object manager
+//     objectManager.add(sprite);
+// }
 
 function initializeOnScreenText() {
 
