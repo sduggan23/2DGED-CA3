@@ -19,7 +19,7 @@ let menuManager;
 let uiManager;
 
 // Set to false to hide bounding boxes
-const debugMode = true;
+const debugMode = false;
 
 function start() {
 
@@ -679,96 +679,84 @@ function initializePlayer() {
 
 function initializeEnemies() {
 
-    let transform;
     let artist;
+    let transform;
 
-    let sprite;
+    let spriteArchetype = null;
+    let spriteClone = null;
 
     artist = new AnimatedSpriteArtist(
-        context,
+        context,                                        // Context
+
+        // Don't be afraid to edit the alpha value! This allows you to make
+        // certain objects transparent, opaque, or semi-transparent. The
+        // range of values for alpha is [0, 1].
         1,
-        GameData.ENEMY_ANIMATION_DATA
+
+        GameData.ENEMY_ANIMATION_DATA           // Animation data
     );
 
-    artist.setTake("Drone Fly");
-
     transform = new Transform2D(
-        new Vector2(1000, 150),
-        0,
-        new Vector2(1, 1),
-        Vector2.Zero,
-        artist.getBoundingBoxByTakeName("Drone Fly"),
+        new Vector2(250, 50),                          // Translation
+        0,                                              // Rotation
+        Vector2.One,                                    // Scale
+        Vector2.Zero,                                   // Origin
+        artist.getBoundingBoxByTakeName("Drone Fly"),  // Dimensions
+
+        // The explode by value determines how much bigger (or smaller) the
+        // collision box should be for a particular sprite. Edit this value
+        // to see what results you get. Make sure the debug mod is enabled
+        // so that collision boxes are drawn on-screen.
+
+        // It is important to note that the below explode by value must be
+        // an even number. The explode by value can be positive (to make the 
+        // sprite's collision box larger), or negative (to make the sprite's
+        // collision box smaller). Leave the value as 0 if you would like 
+        // the collision box to match the size of the sprite.
         0
     );
 
-    sprite = new MoveableSprite(
+    spriteArchetype = new Sprite(
         "Drone",
         transform,
         ActorType.Enemy,
         CollisionType.Collidable,
         StatusType.Updated | StatusType.Drawn,
         artist,
-        1,
-        1
+
+        // The below values (scroll speed multipler and layer depth) are
+        // primarily used to create parallax effects. See the initialize
+        // background function to get an idea of how they are used.
+
+        1,          // Scroll speed multiplier
+        1           // Layer depth
     );
 
-    // Set performance characteristics of the physics body that is
-    // attached to the moveable sprite
-    sprite.body.maximumSpeed = GameData.MAX_SPEED;
-    sprite.body.friction = FrictionType.Normal;
-    sprite.body.gravity = GravityType.Normal;
+    // Create 5 pickup sprites
+    for (let i = 1; i <= 3; i++) {        
 
-    // Attach a clickable object controller to the enemy sprite.
-    // This allows the enemy sprite to become clickable. There is
-    // no reason for our enemy sprite to become clickable, but 
-    // this simply demonstrates how you can make objects in your
-    // game clickable.
-    sprite.attachController(
-        new ClickableObjectController(
-            mouseManager,
+        // Clone sprite
+        spriteClone = spriteArchetype.clone();
 
-            // The clickable object controller takes a callback function as a
-            // second argument to its constructor. This allows you to specify
-            // what happens when the object is clicked. You can create an 
-            // inline arrow function (like I have done below), or you could
-            // create a seperate function using the following syntax...
-            //
-            // const yourFuncName = () => {
-            //     Your code here...
-            // }
-            //
-            // ...and could then pass 'yourFuncName' as the second parameter to 
-            // this constructor.
+        // Update ID
+        spriteClone.id = spriteClone.id + " " + i;
 
-            () => {
+        // Translate sprite
+        spriteClone.transform.translateBy(
+            new Vector2(
+                (i * 1000),
+                0
+            )
+        );
 
-                // This function is executed when you click on the enemy
-                // sprite...
+        // Set sprite take
+        spriteClone.artist.setTake("Drone Fly");
 
-                // Print out to the console
-                console.log("You clicked on the enemy sprite!");
-
-                // Play the 'boing' sound
-                notificationCenter.notify(
-                    new Notification(
-                        NotificationType.Sound,
-                        NotificationAction.Play,
-                        ["collectable"],
-                    )
-                );
-
-                // Change this code to suit your own project!
-            }
-        )
-    );
-
-    // TO DO: Add other controllers 
-    // Add bee move controller...
-    // Add bee shoot controller...
-
-    // Add enemy to object manager
-    objectManager.add(sprite);
+        // Add to object manager
+        objectManager.add(spriteClone);
+    }
 }
+
 
 // Hard-coded for demo purposes... you should not do this in
 // your project! You shoud either initialize your sprite sheets
