@@ -8,7 +8,7 @@ class GameData {
   ];
 
   static BACKGROUND_DIMENSIONS = new Vector2(250, 190);
-  static CAMERA_SPEED = 2.25;
+  static CAMERA_SPEED = 1.75;
 
   static BACKGROUND_DATA = [
 
@@ -352,12 +352,11 @@ class GameData {
     
   };
 
-
   static RUNNER_START_POSITION = new Vector2(150, 350);
   static RUNNER_MOVE_KEYS = [Keys.A, Keys.D, Keys.Space];
   static RUNNER_RUN_VELOCITY = 0.1;
-  static RUNNER_JUMP_VELOCITY = 0.8;
-  static MAX_SPEED = 5;
+  static RUNNER_JUMP_VELOCITY = 0.4;
+  static MAX_SPEED = 4;
 
   static RUNNER_ANIMATION_DATA = {
 
@@ -392,7 +391,7 @@ class GameData {
           new Rect(304, 16, 21, 46),    // Animation frame 1
           new Rect(378, 12, 20, 50),    // Animation frame 2
           new Rect(443, 11, 20, 50),    // Animation frame 3
-          new Rect(507, 14, 20, 50),    // Animation frame 4
+          new Rect(507, 14, 20, 50)    // Animation frame 4
         ]
       },
 
@@ -456,6 +455,111 @@ class GameData {
           new Rect(71, 80, 47, 46),   // Animation frame 6
           new Rect(145, 80, 36, 49),   // Animation frame 7
           new Rect(216, 80, 31, 48)    // Animation frame 8
+        ]
+      },
+    }
+  };
+
+  static RUNNER2_START_POSITION = new Vector2(250, 175);
+  static RUNNER2_MOVE_KEYS = [Keys.ArrowLeft, Keys.ArrowRight, Keys.ArrowUp];
+  static RUNNER2_RUN_VELOCITY = 0.1;
+  static RUNNER2_JUMP_VELOCITY = 0.7;
+  static MAX_SPEED2 = 7;
+
+  static RUNNER2_ANIMATION_DATA = {
+
+    id: "Runner2 Animation Data",
+    spriteSheet: document.getElementById("kat_sprite_sheet"),
+
+    // Animations
+    takes: {
+
+      // Animation 1
+      "Idle": {
+
+        frameRatePerSec: 2,
+
+        // -1 = Loop forever
+        //  0 = Run once (no loop)
+        //  N = Loop N times
+        maxLoopCount: -1,
+
+        startFrameIndex: 0,
+        endFrameIndex: 4,
+
+        // Notice that I chose the largest of all the widths taken from the frames
+        // array below
+        boundingBoxDimensions: new Vector2(38, 30),
+
+        frames: [
+
+          // This list of rects just represent the positions
+          // and dimension of each individual animation frame
+          // on the sprite sheet
+          new Rect(152, 16, 38, 30),    // Animation frame 1
+          new Rect(194, 16, 38, 30),
+          new Rect(194, 16, 38, 30),
+          new Rect(194, 16, 38, 30),
+          new Rect(152, 16, 38, 30),
+        ]
+      },
+
+      // Animation 2
+      "Run Left": {
+
+        frameRatePerSec: 8,
+
+        // -1 = Loop forever
+        //  0 = Run once (no loop)
+        //  N = Loop N times
+        maxLoopCount: -1,
+
+        startFrameIndex: 0,
+        endFrameIndex: 5,
+
+        // Notice that I chose the largest of all the widths taken from the frames
+        // array below
+        boundingBoxDimensions: new Vector2(40, 30),
+
+        frames: [
+          new Rect(540, 92, 40, 24),    // Animation frame 1
+          new Rect(491, 92, 40, 24),    // Animation frame 2
+          new Rect(445, 90, 40, 26),    // Animation frame 3
+          new Rect(401, 88, 40, 28),    // Animation frame 4
+          new Rect(355, 84, 38, 30),    // Animation frame 5
+          new Rect(311, 88, 38, 26)     // Animation frame 6
+        ]
+      },
+
+      // Animation 3
+      "Run Right": {
+
+        frameRatePerSec: 8,
+
+        // -1 = Loop forever
+        //  0 = Run once (no loop)
+        //  N = Loop N times
+        maxLoopCount: -1,
+
+        startFrameIndex: 0,
+        endFrameIndex: 5,
+
+        // Notice that I chose the largest of all the widths taken from the frames
+        // array below
+        boundingBoxDimensions: new Vector2(40, 34),
+
+        frames: [
+
+          // This list of rects just represent the positions
+          // and dimension of each individual animation frame
+          // on the sprite sheet
+
+          new Rect(0, 92, 40, 24),   // Animation frame 1
+          new Rect(48, 92, 40, 24),   // Animation frame 2
+          new Rect(94, 90, 40, 26),    // Animation frame 3
+          new Rect(138, 88, 40, 28),    // Animation frame 4
+          new Rect(186, 84, 38, 30),    // Animation frame 5
+          new Rect(230, 88, 38, 26)     // Animation frame 6
         ]
       },
     }
