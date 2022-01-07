@@ -456,15 +456,15 @@ class GameData {
           new Rect(145, 80, 36, 49),   // Animation frame 7
           new Rect(216, 80, 31, 48)    // Animation frame 8
         ]
-      },
+      }
     }
   };
 
-  static RUNNER2_START_POSITION = new Vector2(250, 175);
+  static RUNNER2_START_POSITION = new Vector2(250, 170);
   static RUNNER2_MOVE_KEYS = [Keys.ArrowLeft, Keys.ArrowRight, Keys.ArrowUp];
   static RUNNER2_RUN_VELOCITY = 0.1;
-  static RUNNER2_JUMP_VELOCITY = 0.7;
-  static MAX_SPEED2 = 7;
+  static RUNNER2_JUMP_VELOCITY = 0.6;
+  static MAX_SPEED2 = 6;
 
   static RUNNER2_ANIMATION_DATA = {
 
@@ -561,7 +561,7 @@ class GameData {
           new Rect(186, 84, 38, 30),    // Animation frame 5
           new Rect(230, 88, 38, 26)     // Animation frame 6
         ]
-      },
+      }
     }
   };
 

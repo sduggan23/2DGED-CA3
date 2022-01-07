@@ -49,6 +49,7 @@ class PlayerMoveController {
 
         this.handleMove(gameTime, parent);
         this.handleJump(gameTime, parent);
+                this.handleJump(gameTime, parent);
     }
 
     handleMove(gameTime, parent) {
@@ -72,6 +73,14 @@ class PlayerMoveController {
             // Update the player's animation
             parent.artist.setTake("Run Right");
 
+        }
+
+        // If the move right key is pressed
+        else
+        {
+
+            // Update the player's animation
+            parent.artist.setTake("Idle");
 
         }
     }
@@ -93,6 +102,9 @@ class PlayerMoveController {
             // Apply velocity to begin moving the player up
             // This gives the effect of jumping 
             parent.body.setVelocityY(-this.jumpVelocity * gameTime.elapsedTimeInMs);
+
+            // Update the player's animation
+            // parent.artist.setTake("Jump");
 
             // Create a jump sound notification
             notificationCenter.notify(
@@ -273,21 +285,24 @@ class PlayerMoveController {
                 // that will be fired if the player collides with a pickup
                 // sprite
 
-                // notificationCenter.notify(
-                //     new Notification(
-                //         NotificationType.Sound,
-                //         NotificationAction.Play,
-                //         ["game_over"]
-                //     )
-                // );
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sound,
+                        NotificationAction.Play,
+                        ["game_over"]
+                    )
+                );
 
-                // notificationCenter.notify(
-                //   new Notification(
-                //     NotificationType.Sprite,
-                //     NotificationAction.RemoveFirst,
-                //     [enemy]
-                //   )
-                // );
+                notificationCenter.notify(
+                  new Notification(
+                    NotificationType.Sprite,
+                    NotificationAction.RemoveFirst,
+                    [parent]
+                  )
+                );
+
+                $('#control_menu').show();
+                $('#control_menu').removeClass('hidden');
 
                 // notificationCenter.notify(
                 //     new Notification(

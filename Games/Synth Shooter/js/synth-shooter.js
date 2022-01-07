@@ -779,7 +779,7 @@ function initializeEnemies() {
     );
 
     transform = new Transform2D(
-        new Vector2(250, 50),                          // Translation
+        new Vector2(200, 50),                          // Translation
         0,                                              // Rotation
         Vector2.One,                                    // Scale
         Vector2.Zero,                                   // Origin
