@@ -250,6 +250,7 @@ function initializeSprites() {
     initializeGroundPlatforms();
     initializeLargeBuildingPlatforms();
     initializeLaserGates();
+    initializeGameOverTrigger();
     initializePlatforms();
     initializePickups();
     initializePlayer();
@@ -534,6 +535,63 @@ function initializeLaserGates() {
 
         // Update translation
         spriteClone.transform.setTranslation(GameData.LASER_GATE_DATA.translationArray[i]);
+
+        // Add to object manager
+        objectManager.add(spriteClone);
+    }
+}
+
+function initializeGameOverTrigger() {
+
+    let artist;
+    let transform;
+
+    let spriteArchetype;
+    let spriteClone = null;
+
+    artist = new SpriteArtist(
+        context,
+        1,
+        GameData.GAME_OVER_TRIGGER_DATA.spriteSheet,
+        GameData.GAME_OVER_TRIGGER_DATA.sourcePosition,
+        GameData.GAME_OVER_TRIGGER_DATA.sourceDimensions
+    );
+
+    transform = new Transform2D(
+        Vector2.Zero,
+        GameData.GAME_OVER_TRIGGER_DATA.rotation,
+        GameData.GAME_OVER_TRIGGER_DATA.scale,
+        GameData.GAME_OVER_TRIGGER_DATA.origin,
+        GameData.GAME_OVER_TRIGGER_DATA.sourceDimensions,
+        GameData.GAME_OVER_TRIGGER_DATA.explodeBoundingBoxInPixels
+    );
+
+    spriteArchetype = new Sprite(
+        GameData.GAME_OVER_TRIGGER_DATA.id,
+        transform,
+        GameData.GAME_OVER_TRIGGER_DATA.actorType,
+        GameData.GAME_OVER_TRIGGER_DATA.collisionType,
+        StatusType.Updated | StatusType.Drawn,
+        artist,
+        GameData.GAME_OVER_TRIGGER_DATA.scrollSpeedMultiplier,
+        GameData.GAME_OVER_TRIGGER_DATA.layerDepth
+    );
+
+    // Check out the Constant.js file - it contains an object called
+    // PLATFORM_DATA, which contains an array property called translationArray.
+    // This translationArray simply contains a list of positions for where we
+    // want to position the platforms on our screen. Take a look at this array
+    // to understand more.
+    for (let i = 0; i < GameData.GAME_OVER_TRIGGER_DATA.translationArray.length; i++) {
+
+        // Clone sprite
+        spriteClone = spriteArchetype.clone();
+
+        // Update id
+        spriteClone.id = spriteClone.id + " " + i;
+
+        // Update translation
+        spriteClone.transform.setTranslation(GameData.GAME_OVER_TRIGGER_DATA.translationArray[i]);
 
         // Add to object manager
         objectManager.add(spriteClone);
@@ -918,7 +976,7 @@ function initializeOnScreenText() {
     artist = new TextSpriteArtist(
         context,                        // Context
         1,                              // Alpha
-        "Collect pickups to progress!",                  // Text
+        "Press switches to progress!",                  // Text
         FontType.InformationMedium,     // Font Type
         Color.White,                    // Color
         TextAlignType.Center,             // Text Align

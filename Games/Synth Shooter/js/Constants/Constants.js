@@ -286,7 +286,7 @@ class GameData {
 
       new Vector2(2305, 250),
 
-      new Vector2(2445, 235),
+      //new Vector2(2445, 235),
 
       new Vector2(2585, 250),
 
@@ -343,7 +343,32 @@ class GameData {
       new Vector2(1700, 0),
       new Vector2(2100, 0),
       new Vector2(3250, 0),
-      new Vector2(3300, 0),
+      new Vector2(3300, 0)
+      
+      
+      
+
+    ]
+    
+  };
+
+  static GAME_OVER_TRIGGER_DATA = {
+    id: "Platform",
+    spriteSheet: document.getElementById("laser_sprite_sheet"),
+    sourcePosition: new Vector2(80, 0),
+    sourceDimensions: new Vector2(35,200),
+    rotation: 90,
+    scale: new Vector2(500,0.1),
+    origin: Vector2.Zero,
+    actorType: ActorType.Enemy,
+    collisionType: CollisionType.NotCollidable,
+    layerDepth: 0,
+    explodeBoundingBoxInPixels: -6,
+
+    translationArray: [
+
+      new Vector2(0, 465),
+
       
       
       

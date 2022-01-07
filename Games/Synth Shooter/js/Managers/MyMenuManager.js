@@ -64,20 +64,24 @@ class MyMenuManager extends MenuManager {
 
         // If we created an event to tell the ObjectManager to draw and update,
         // then it means we want the game to run i.e. hide the menu
+        
         if (statusType != 0) {
 
             $('#main_menu').hide();
+            
         }
 
         else {
 
             $('#main_menu').show();
+
         }
     }
 
     initialize() {
 
         // TO DO: Please make sure to hide any other menus that you have created
+        
 
         // Hide the exit menu
         $('#exit_menu').hide();
@@ -86,6 +90,10 @@ class MyMenuManager extends MenuManager {
         // Hide the control menu
         $('#control_menu').hide();
         $('#control_menu').addClass('hidden');
+
+        // Hide the game menu
+        $('#gameover_menu').hide();
+        $('#gameover_menu').addClass('hidden');
 
         // Hide the YOUR_MENU menu
         // $('#YOUR_MENU_ID').hide();
@@ -96,6 +104,7 @@ class MyMenuManager extends MenuManager {
 
             // Hide the menu
             $('#main_menu').hide();
+            $('#gameover_menu').hide();
 
             // Send a notification to update and draw the game
             notificationCenter.notify(
@@ -106,13 +115,13 @@ class MyMenuManager extends MenuManager {
                 )
             );
 
-            notificationCenter.notify(
-                new Notification(
-                    NotificationType.Sound,
-                    NotificationAction.Play,
-                    ["background"]
-                )
-            );
+            // notificationCenter.notify(
+            //     new Notification(
+            //         NotificationType.Sound,
+            //         NotificationAction.Play,
+            //         ["background"]
+            //     )
+            // );
         });
 
         // If the audio button is clicked
@@ -145,6 +154,7 @@ class MyMenuManager extends MenuManager {
     }
 
     update(gameTime) {
+        
 
         // TO DO: Add code to listen for a 'pause key' press, and show/hide the menu accordingly
     }

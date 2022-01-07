@@ -255,6 +255,7 @@ class PlayerMoveController {
             }
         }
     }
+    
 
     handleEnemyCollision(parent) {
 
@@ -301,8 +302,8 @@ class PlayerMoveController {
                   )
                 );
 
-                $('#control_menu').show();
-                $('#control_menu').removeClass('hidden');
+                $('#gameover_menu').show();
+                $('#gameover_menu').removeClass('hidden');
 
                 // notificationCenter.notify(
                 //     new Notification(
@@ -314,6 +315,7 @@ class PlayerMoveController {
             }
         }
     }
+    
 
     applyInput(parent) {
 
