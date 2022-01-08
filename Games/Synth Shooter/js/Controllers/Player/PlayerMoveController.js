@@ -129,6 +129,7 @@ class PlayerMoveController {
         this.handlePlatformCollision(parent);
         this.handlePickupCollision(parent);
         this.handleEnemyCollision(parent);
+        this.handleLevelCompleteCollision(parent);
     }
 
     handlePlatformCollision(parent) {
@@ -290,7 +291,7 @@ class PlayerMoveController {
                     new Notification(
                         NotificationType.Sound,
                         NotificationAction.Play,
-                        ["game_over"]
+                        ["game_over2"]
                     )
                 );
 
@@ -312,6 +313,79 @@ class PlayerMoveController {
                 //         [-5]
                 //     )
                 // );
+            }
+        }
+    }
+
+    handleLevelCompleteCollision(parent) {
+
+        // Get a list of all the pickup sprites that are stored
+        // within the object manager
+        const triggers = this.objectManager.get(ActorType.Interactable);
+
+        // If pickups is null, exit the function
+        if (triggers == null) return;
+
+        // Loop through the list of pickup sprites
+        for (let i = 0; i < triggers.length; i++) {
+
+            // Store a reference to the current pickup sprite
+            const trigger = triggers[i];
+
+            // We can use a simple collision check here to check if the player has collided
+            // with the pickup sprite
+            if (parent.transform.boundingBox.intersects(trigger.transform.boundingBox)) {
+
+                // If the player has collided with a pickup, do something...
+
+                // Create a notification that will ultimately remove
+                // the pickup sprite
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sprite,
+                        NotificationAction.Remove,
+                        [trigger]
+                    )
+                );
+
+                // Uncomment this code to see how we could remove ALL platforms    
+                // notificationCenter.notify(
+                //     new Notification(
+                //         NotificationType.Sprite,            // Who is registered to listen to this notification?        see ObjectManager -> registerForNotifications
+                //         NotificationAction.RemoveAllByType, // How does the ObjectManager handle the notification?      see ObjectManager -> handleSpriteNotification
+                //         [ActorType.Platform]                // What parameters does the method you are calling expect?  see ObjectManager -> removeAllByType()
+                //     )
+                // );
+
+                // notificationCenter.notify(
+                //     new Notification(
+                //         NotificationType.Sound,
+                //         NotificationAction.Play,
+                //         ["game_over"]
+                //     )
+                // );
+
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sound,
+                        NotificationAction.Play,
+                        ["level_complete"]
+                    )
+                );
+
+                
+
+
+                $('#exit_menu').show();
+                $('#exit_menu').removeClass('hidden');
+
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sound,
+                        NotificationAction.Pause,
+                        ["background"]
+                    )
+                );
             }
         }
     }

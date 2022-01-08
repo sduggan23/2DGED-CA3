@@ -3,7 +3,6 @@ body {
     user-select: none;
     font-family: 'Audiowide', cursive;
     font-size: 16px;
-    background-color: #B30D5D;
     background-image: linear-gradient(to bottom, #ffcc80 0%, #B30D5D 100%);
     margin-top: 45px;
 }
@@ -59,17 +58,18 @@ body {
 }
 
 #exit_menu {
-    background-color: black;
+    background-color: #B30D5D;
+    color: #ff9900;
 }
 
 #control_menu {
     background-color: pink;
-    color: goldenrod;
+    color: #ff9900;
 }
 
 #gameover_menu {
-    background-color: pink;
-    color: goldenrod;
+    background-color: black;
+    color: #ff00ff;
 }
 
 #main_canvas {

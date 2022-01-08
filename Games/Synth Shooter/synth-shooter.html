@@ -15,11 +15,6 @@
 
 <body>
 
-    <!-- Create Title -->
-    <!-- <div id="title">
-        <h1>Synth Shooter</h1>
-    </div> -->
-
     <!-- Create Game Window -->
     <div id="game_window" class="wrapper">
 
@@ -31,7 +26,7 @@
                 <h1>Synth Shooter</h1>
                 <ul>
                     <li><a href="javascript:void(0)" class="button play">Start Game</a></li>
-                    <!-- <li><a href="javascript:void(0)" id="audio_button" class="button">Toggle Audio</a></li> -->
+                    <li><a href="javascript:void(0)" id="audio_button" class="button">Toggle Audio</a></li>
                     <li><a href="javascript:void(0)" class="button control">Controls</a></li>
                     <li><a href="javascript:void(0)" class="button exit">Exit</a></li>
                 </ul>
@@ -47,19 +42,16 @@
                 <h1>This is the control menu!</h1>
             </div>
 
-            <!-- Control Menu -->
+            <!-- Game Over Menu -->
             <div id="gameover_menu" class="menu hidden">
-                <h1>Level Failed!<br>
-                    Refresh
-                </h1>
+                <h1>Level Failed!</h1>
             </div>
 
-            <!-- Add More Menu's Here -->
-
-            <!-- 
-                Check out the initialize function of MyMenuManager to see how menu's are
-                hidden when the game starts.
-            -->
+            <!-- Game Complete Menu -->
+            <!-- <div id="gamecomplete_menu" class="menu hidden">
+                <h1>Level Complete!</h1>
+            </div> -->
+            
         </div>
 
         <!-- Create Canvas -->
@@ -76,6 +68,7 @@
     <img id="rachel_sprite_sheet" class="sprite" src="assets/images/rachelsprites.png" />
     <img id="drone_sprite_sheet" class="sprite" src="assets/images/dronesprites.png" />
     <img id="laser_sprite_sheet" class="sprite" src="assets/images/texture_laser.png" />
+    <img id="flag_sprite_sheet" class="sprite" src="assets/images/platform/flag_red_green.png" />
     
 
     <img id="snailbait_sprite_sheet" class="sprite" src="assets/images/spritesheet.png" />
@@ -85,6 +78,8 @@
     <!-- <audio preload="auto" id="background" src="assets/sound/background/cyberpunk city 2.mp3"></audio> -->
      <audio preload="auto" id="background" src="assets/sound/background/Retro Gamer.mp3"></audio>
     <audio preload="auto" id="game_over" src="assets/sound/effects/game-over.mp3"></audio>
+    <audio preload="auto" id="game_over2" src="assets/sound/effects/game-over.wav"></audio>
+    <audio preload="auto" id="level_complete" src="assets/sound/effects/level-complete.wav"></audio>
     <audio preload="auto" id="jump" src="assets/sound/effects/jump.wav"></audio>
     <audio preload="auto" id="collectable" src="assets/sound/effects/collectable.mp3"></audio>
 

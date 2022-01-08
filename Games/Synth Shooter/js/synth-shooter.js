@@ -235,7 +235,7 @@ function initializeCameras() {
                 Keys.Numpad4, Keys.Numpad6, Keys.Numpad7, Keys.Numpad9,
                 Keys.Numpad8, Keys.Numpad2, Keys.Numpad5
             ],
-            new Vector2(GameData.CAMERA_SPEED, 0),
+            new Vector2(GameData.CAMERA_X_SPEED, 0),
             Math.PI / 180,
             new Vector2(0.005, 0.005)
         )
@@ -251,6 +251,7 @@ function initializeSprites() {
     initializeLargeBuildingPlatforms();
     initializeLaserGates();
     initializeGameOverTrigger();
+    initializeLevelCompleteTrigger();
     initializePlatforms();
     initializePickups();
     initializePlayer();
@@ -895,6 +896,45 @@ function initializeEnemies() {
         // Add to object manager
         objectManager.add(spriteClone);
     }
+}
+
+
+function initializeLevelCompleteTrigger() {
+
+    let transform;
+    let artist;
+
+    let sprite;
+
+    artist = new AnimatedSpriteArtist(
+        context,
+        1,
+        GameData.LEVEL_COMPLETE_TRIGGER_DATA
+    );
+
+    artist.setTake("Flag Fly");
+
+    transform = new Transform2D(
+        new Vector2(4420, 350),
+        0,
+        new Vector2(1, 1),
+        Vector2.Zero,
+        artist.getBoundingBoxByTakeName("Flag Fly"),
+        0
+    );
+
+    sprite = new MoveableSprite(
+        "Flag",
+        transform,
+        ActorType.Interactable,
+        CollisionType.Collidable,
+        StatusType.Updated | StatusType.Drawn,
+        artist,
+        1,
+        1
+    );
+
+    objectManager.add(sprite);
 }
 
 

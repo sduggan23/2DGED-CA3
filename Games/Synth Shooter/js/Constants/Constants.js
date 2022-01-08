@@ -1,14 +1,16 @@
 
 class GameData {
   static AUDIO_CUE_ARRAY = [
-    new AudioCue("background", AudioType.Background, 1, 1, 0, true),
-    new AudioCue("jump", AudioType.Move, 1, 1, 0, false),
+    new AudioCue("background", AudioType.Background, 0.2, 1, 0, true),
+    new AudioCue("jump", AudioType.Move, 0.5, 1, 0, false),
     new AudioCue("collectable", AudioType.All, 1, 1, 0, false),
     new AudioCue("game_over", AudioType.WinLose, 1, 1, 0, false),
+    new AudioCue("game_over2", AudioType.WinLose, 1, 1, 0, false),
+    new AudioCue("level_complete", AudioType.WinLose, 1, 1, 0, false),
   ];
 
   static BACKGROUND_DIMENSIONS = new Vector2(250, 190);
-  static CAMERA_SPEED = 1.75;
+  static CAMERA_X_SPEED = 2;
 
   static BACKGROUND_DATA = [
 
@@ -57,7 +59,7 @@ class GameData {
   ];
 
   static GROUND_PLATFORM_DATA = {
-    id: "Platform",
+    id: "Ground Platform",
     spriteSheet: document.getElementById("cyber_tileset"),
     sourcePosition: new Vector2(0, 16),
     sourceDimensions: new Vector2(160, 96),
@@ -132,7 +134,7 @@ class GameData {
   };
 
   static LARGE_BUILDING_PLATFORM_DATA = {
-    id: "Platform",
+    id: "Large Platform",
     spriteSheet: document.getElementById("cyber_tileset"),
     sourcePosition: new Vector2(471, 16),
     sourceDimensions: new Vector2(137, 96),
@@ -268,9 +270,9 @@ class GameData {
 
     translationArray: [
 
-      new Vector2(240, 200),
-      new Vector2(295, 200),
-      new Vector2(350, 200),
+      new Vector2(240, 250),
+      new Vector2(295, 250),
+      new Vector2(350, 250),
 
       new Vector2(1365, 300),
       new Vector2(1410, 300),
@@ -301,7 +303,7 @@ class GameData {
   };
 
   static COLLECTIBLES_ANIMATION_DATA = {
-    id: "Collectibles Animation Data",
+    id: "Collectibles",
     spriteSheet: document.getElementById("snailbait_sprite_sheet"),
     sourcePosition: new Vector2(10, 195),
     sourceDimensions: new Vector2(35, 22),
@@ -314,7 +316,7 @@ class GameData {
     explodeBoundingBoxInPixels: -6,
 
     translationArray: [
-      new Vector2(320, 195),
+      new Vector2(320, 245),
       new Vector2(1410, 295),
       new Vector2(1830, 220),
       new Vector2(2325, 245),
@@ -325,7 +327,7 @@ class GameData {
   };
 
     static LASER_GATE_DATA = {
-    id: "Platform",
+    id: "Laser Gate",
     spriteSheet: document.getElementById("laser_sprite_sheet"),
     sourcePosition: new Vector2(80, 0),
     sourceDimensions: new Vector2(35,200),
@@ -345,15 +347,11 @@ class GameData {
       new Vector2(3250, 0),
       new Vector2(3300, 0)
       
-      
-      
-
     ]
-    
   };
 
   static GAME_OVER_TRIGGER_DATA = {
-    id: "Platform",
+    id: "Game Over Trigger",
     spriteSheet: document.getElementById("laser_sprite_sheet"),
     sourcePosition: new Vector2(80, 0),
     sourceDimensions: new Vector2(35,200),
@@ -367,15 +365,10 @@ class GameData {
 
     translationArray: [
 
-      new Vector2(0, 465),
-
-      
-      
-      
-
+      new Vector2(0, 465)
     ]
-    
   };
+
 
   static RUNNER_START_POSITION = new Vector2(150, 350);
   static RUNNER_MOVE_KEYS = [Keys.A, Keys.D, Keys.Space];
@@ -628,7 +621,42 @@ class GameData {
       }
     }
   };
+
+  static LEVEL_COMPLETE_TRIGGER_DATA = {
+
+    id: "Level Complete Trigger",
+    spriteSheet: document.getElementById("flag_sprite_sheet"),
+    
+    // Animations
+    takes: {
+
+      // Animation 1
+      "Flag Fly": {
+
+        frameRatePerSec: 2,
+        
+        // -1 = Loop forever
+        //  0 = Run once (no loop)
+        //  N = Loop N times
+        maxLoopCount: -1,
+
+        startFrameIndex: 0,
+        endFrameIndex: 3,
+
+        boundingBoxDimensions: new Vector2(35, 50),
+
+        frames: [
+          new Rect(27, 76, 28, 61),
+          new Rect(59, 76, 28, 61),
+          new Rect(90, 76, 28, 61),
+          new Rect(121, 76, 27, 61)
+        ]
+      }
+    }
+  };
 }
+
+
 
 const FontType = {
   InformationSmall: "12px Arial",
