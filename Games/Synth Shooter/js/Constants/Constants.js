@@ -1,11 +1,10 @@
 
 class GameData {
   static AUDIO_CUE_ARRAY = [
-    new AudioCue("background", AudioType.Background, 0.2, 1, 0, true),
+    new AudioCue("background", AudioType.Background, 0.35, 1, 0, true),
     new AudioCue("jump", AudioType.Move, 0.5, 1, 0, false),
     new AudioCue("collectable", AudioType.All, 1, 1, 0, false),
     new AudioCue("game_over", AudioType.WinLose, 1, 1, 0, false),
-    new AudioCue("game_over2", AudioType.WinLose, 1, 1, 0, false),
     new AudioCue("level_complete", AudioType.WinLose, 1, 1, 0, false),
   ];
 

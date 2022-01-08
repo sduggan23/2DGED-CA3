@@ -65,6 +65,8 @@ body {
 #control_menu {
     background-color: pink;
     color: #ff9900;
+
+    background-image: url('../assets/images/ui/cyberpunk-city-22-back-preview.png');
 }
 
 #gameover_menu {

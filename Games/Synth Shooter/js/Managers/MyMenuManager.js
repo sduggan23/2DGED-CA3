@@ -115,13 +115,13 @@ class MyMenuManager extends MenuManager {
                 )
             );
 
-            notificationCenter.notify(
-                new Notification(
-                    NotificationType.Sound,
-                    NotificationAction.Play,
-                    ["background"]
-                )
-            );
+            // notificationCenter.notify(
+            //     new Notification(
+            //         NotificationType.Sound,
+            //         NotificationAction.Play,
+            //         ["background"]
+            //     )
+            // );
         });
 
         // If the audio button is clicked
@@ -132,9 +132,20 @@ class MyMenuManager extends MenuManager {
             // Do something...
 
             console.log("You clicked the audio button!");
+
+            notificationCenter.notify(
+                new Notification(
+                    NotificationType.Sound,
+                    NotificationAction.Play,
+                    ["background"]
+                )
+            );
+
+            
             
             // Hint: Send a notification to toggle the audio on/off
         });
+        
 
         // If the exit button is clicked
         $('.exit').click(function () {
@@ -142,6 +153,8 @@ class MyMenuManager extends MenuManager {
             // Show exit menu
             $('#exit_menu').show();
             $('#exit_menu').removeClass('hidden');
+
+            
         });
 
         // If the control button is clicked

@@ -291,9 +291,10 @@ class PlayerMoveController {
                     new Notification(
                         NotificationType.Sound,
                         NotificationAction.Play,
-                        ["game_over2"]
+                        ["game_over"]
                     )
                 );
+
 
                 notificationCenter.notify(
                   new Notification(
@@ -305,6 +306,15 @@ class PlayerMoveController {
 
                 $('#gameover_menu').show();
                 $('#gameover_menu').removeClass('hidden');
+
+                                
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sound,
+                        NotificationAction.Pause,
+                        ["background"]
+                    )
+                );
 
                 // notificationCenter.notify(
                 //     new Notification(
@@ -348,23 +358,6 @@ class PlayerMoveController {
                     )
                 );
 
-                // Uncomment this code to see how we could remove ALL platforms    
-                // notificationCenter.notify(
-                //     new Notification(
-                //         NotificationType.Sprite,            // Who is registered to listen to this notification?        see ObjectManager -> registerForNotifications
-                //         NotificationAction.RemoveAllByType, // How does the ObjectManager handle the notification?      see ObjectManager -> handleSpriteNotification
-                //         [ActorType.Platform]                // What parameters does the method you are calling expect?  see ObjectManager -> removeAllByType()
-                //     )
-                // );
-
-                // notificationCenter.notify(
-                //     new Notification(
-                //         NotificationType.Sound,
-                //         NotificationAction.Play,
-                //         ["game_over"]
-                //     )
-                // );
-
                 notificationCenter.notify(
                     new Notification(
                         NotificationType.Sound,
@@ -373,19 +366,9 @@ class PlayerMoveController {
                     )
                 );
 
-                
-
-
                 $('#exit_menu').show();
                 $('#exit_menu').removeClass('hidden');
 
-                notificationCenter.notify(
-                    new Notification(
-                        NotificationType.Sound,
-                        NotificationAction.Pause,
-                        ["background"]
-                    )
-                );
             }
         }
     }
