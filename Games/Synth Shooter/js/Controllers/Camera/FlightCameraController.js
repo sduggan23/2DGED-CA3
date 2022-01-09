@@ -6,12 +6,12 @@
  * @class FlightCameraController
  */
 class FlightCameraController {
-    
+
     constructor(
-        keyboardManager, 
-        moveKeys, 
-        moveSpeed, 
-        rotateSpeedInRadians, 
+        keyboardManager,
+        moveKeys,
+        moveSpeed,
+        rotateSpeedInRadians,
         scaleSpeed,
         playerSprite
     ) {
@@ -37,9 +37,7 @@ class FlightCameraController {
 
             // Move left
             parent.transform.translateBy(Vector2.MultiplyScalar(this.moveSpeed, -1));
-        }
-
-        else if (this.keyboardManager.isKeyDown(Keys.D)) {
+        } else if (this.keyboardManager.isKeyDown(Keys.D)) {
 
             // Move right
             parent.transform.translateBy(Vector2.MultiplyScalar(this.moveSpeed, 1));
@@ -50,9 +48,7 @@ class FlightCameraController {
 
             // Rotate anti-clockwise
             parent.transform.rotateBy(-this.rotateSpeedInRadians);
-        }
-
-        else if (this.keyboardManager.isKeyDown(this.moveKeys[3])) {
+        } else if (this.keyboardManager.isKeyDown(this.moveKeys[3])) {
 
             // Rotate clockwise
             parent.transform.rotateBy(this.rotateSpeedInRadians);
@@ -63,9 +59,7 @@ class FlightCameraController {
 
             // Scale up
             parent.transform.scaleBy(Vector2.MultiplyScalar(this.scaleSpeed, 1));
-        }
-
-        else if (this.keyboardManager.isKeyDown(this.moveKeys[5])) {
+        } else if (this.keyboardManager.isKeyDown(this.moveKeys[5])) {
 
             // Scale down
             parent.transform.scaleBy(Vector2.MultiplyScalar(this.scaleSpeed, -1));

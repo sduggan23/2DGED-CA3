@@ -170,8 +170,8 @@ function initializeManagers() {
     gameStateManager = new MyGameStateManager(
         "Game State Manager",
         notificationCenter,
-        100,                            // Initial player health
-        36                              // Initial player ammo
+        100, // Initial player health
+        36 // Initial player ammo
     )
 
     menuManager = new MyMenuManager(
@@ -627,32 +627,32 @@ function initializePlayer() {
     let sprite;
 
     artist = new AnimatedSpriteArtist(
-        context,                                                // Context
-        1,                                                      // Alpha
-        GameData.RUNNER_ANIMATION_DATA                          // Animation Data
+        context, // Context
+        1, // Alpha
+        GameData.RUNNER_ANIMATION_DATA // Animation Data
     );
 
     // Set animation
     artist.setTake("Idle");
 
     transform = new Transform2D(
-        GameData.RUNNER_START_POSITION,                         // Translation
-        0,                                                      // Rotation
-        Vector2.One,                                            // Scale
-        Vector2.Zero,                                           // Origin
-        artist.getBoundingBoxByTakeName("Idle"),                // Dimensions
-        0                                                       // Explode By
+        GameData.RUNNER_START_POSITION, // Translation
+        0, // Rotation
+        Vector2.One, // Scale
+        Vector2.Zero, // Origin
+        artist.getBoundingBoxByTakeName("Idle"), // Dimensions
+        0 // Explode By
     );
 
     sprite = new MoveableSprite(
-        "Player",                                               // ID
-        transform,                                              // Transform
-        ActorType.Player,                                       // ActorType
-        CollisionType.Collidable,                               // CollisionType
-        StatusType.Updated | StatusType.Drawn,                  // StatusType
-        artist,                                                 // Artist
-        1,                                                      // ScrollSpeedMultipler
-        1                                                       // LayerDepth
+        "Player", // ID
+        transform, // Transform
+        ActorType.Player, // ActorType
+        CollisionType.Collidable, // CollisionType
+        StatusType.Updated | StatusType.Drawn, // StatusType
+        artist, // Artist
+        1, // ScrollSpeedMultipler
+        1 // LayerDepth
     );
 
     sprite.body.maximumSpeed = GameData.MAX_SPEED;
@@ -672,7 +672,7 @@ function initializePlayer() {
     );
 
     // Add sprite to object manager
-    objectManager.add(sprite); 
+    objectManager.add(sprite);
 }
 
 function initializePlayer2() {
@@ -682,32 +682,32 @@ function initializePlayer2() {
     let sprite;
 
     artist = new AnimatedSpriteArtist(
-        context,                                                // Context
-        1,                                                      // Alpha
-        GameData.RUNNER2_ANIMATION_DATA                          // Animation Data
+        context, // Context
+        1, // Alpha
+        GameData.RUNNER2_ANIMATION_DATA // Animation Data
     );
 
     // Set animation
     artist.setTake("Idle");
 
     transform = new Transform2D(
-        GameData.RUNNER2_START_POSITION,                         // Translation
-        0,                                                      // Rotation
-        Vector2.One,                                            // Scale
-        Vector2.Zero,                                           // Origin
-        artist.getBoundingBoxByTakeName("Idle"),                // Dimensions
-        0                                                       // Explode By
+        GameData.RUNNER2_START_POSITION, // Translation
+        0, // Rotation
+        Vector2.One, // Scale
+        Vector2.Zero, // Origin
+        artist.getBoundingBoxByTakeName("Idle"), // Dimensions
+        0 // Explode By
     );
 
     sprite = new MoveableSprite(
-        "Player2",                                               // ID
-        transform,                                              // Transform
-        ActorType.Player,                                       // ActorType
-        CollisionType.Collidable,                               // CollisionType
-        StatusType.Updated | StatusType.Drawn,                  // StatusType
-        artist,                                                 // Artist
-        1,                                                      // ScrollSpeedMultipler
-        1                                                       // LayerDepth
+        "Player2", // ID
+        transform, // Transform
+        ActorType.Player, // ActorType
+        CollisionType.Collidable, // CollisionType
+        StatusType.Updated | StatusType.Drawn, // StatusType
+        artist, // Artist
+        1, // ScrollSpeedMultipler
+        1 // LayerDepth
     );
 
     sprite.body.maximumSpeed = GameData.MAX_SPEED2;
@@ -727,7 +727,7 @@ function initializePlayer2() {
     );
 
     // Add sprite to object manager
-    objectManager.add(sprite);   
+    objectManager.add(sprite);
 }
 
 function initializeEnemies() {
@@ -739,17 +739,17 @@ function initializeEnemies() {
     let spriteClone = null;
 
     artist = new AnimatedSpriteArtist(
-        context,                                        // Context
+        context, // Context
         1,
-        GameData.ENEMY_ANIMATION_DATA           // Animation data
+        GameData.ENEMY_ANIMATION_DATA // Animation data
     );
 
     transform = new Transform2D(
-        new Vector2(200, 50),                          // Translation
-        0,                                              // Rotation
-        Vector2.One,                                    // Scale
-        Vector2.Zero,                                   // Origin
-        artist.getBoundingBoxByTakeName("Drone Fly"),  // Dimensions
+        new Vector2(200, 50), // Translation
+        0, // Rotation
+        Vector2.One, // Scale
+        Vector2.Zero, // Origin
+        artist.getBoundingBoxByTakeName("Drone Fly"), // Dimensions
         0
     );
 
@@ -760,12 +760,12 @@ function initializeEnemies() {
         CollisionType.Collidable,
         StatusType.Updated | StatusType.Drawn,
         artist,
-        1,          // Scroll speed multiplier
-        1           // Layer depth
+        1, // Scroll speed multiplier
+        1 // Layer depth
     );
 
     // Create 5 pickup sprites
-    for (let i = 1; i <= 3; i++) {        
+    for (let i = 1; i <= 3; i++) {
 
         // Clone sprite
         spriteClone = spriteArchetype.clone();
@@ -849,13 +849,13 @@ function initializeHUD() {
     );
 
     artist = new SpriteArtist(
-        context,                                        // Context
-        1,                                              // Alpha
-        soundOffSprite,                                  // Spritesheet
-        Vector2.Zero,                                   // Source Position
-        new Vector2(32, 32),                            // Source Dimension
+        context, // Context
+        1, // Alpha
+        soundOffSprite, // Spritesheet
+        Vector2.Zero, // Source Position
+        new Vector2(32, 32), // Source Dimension
 
-        true                                            // Fixed Position
+        true // Fixed Position
     );
 
     sprite = new Sprite(
@@ -894,12 +894,12 @@ function initializeHUD2() {
     );
 
     artist = new SpriteArtist(
-        context,                                        // Context
-        1,                                              // Alpha
-        soundOnSprite,                                  // Spritesheet
-        Vector2.Zero,                                   // Source Position
-        new Vector2(32, 32),                            // Source Dimension
-        true                                            // Fixed Position
+        context, // Context
+        1, // Alpha
+        soundOnSprite, // Spritesheet
+        Vector2.Zero, // Source Position
+        new Vector2(32, 32), // Source Dimension
+        true // Fixed Position
     );
 
     sprite = new Sprite(
@@ -934,14 +934,14 @@ function initializeOnScreenText() {
     );
 
     artist = new TextSpriteArtist(
-        context,                        // Context
-        1,                              // Alpha
-        "Press switches to progress!",                  // Text
-        FontType.InformationMedium,     // Font Type
-        Color.White,                    // Color
-        TextAlignType.Center,             // Text Align
-        200,                            // Max Width
-        false                            // Fixed Position
+        context, // Context
+        1, // Alpha
+        "Press switches to progress!", // Text
+        FontType.InformationMedium, // Font Type
+        Color.White, // Color
+        TextAlignType.Center, // Text Align
+        200, // Max Width
+        false // Fixed Position
     );
 
     sprite = new Sprite(

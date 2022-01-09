@@ -47,17 +47,6 @@ class MyUIManager extends UIManager {
      */
     update(gameTime) {
 
-        // The below code checks to see if the mouse has been clicked.
-        // It then extracts all of the HUD sprites from the object manager.
-        // Next, it loops through the list of HUD sprites, and checks to see 
-        // if the mouse click took place on top of any HUD sprite. If so,
-        // some action is performed.
-
-        // For example, this will allow us to check if the user has clicked on 
-        // the pause button.
-
-        // If the mouse has been clicked (i.e., if the click position 
-        // is not null)
         if (this.mouseManager.clickPosition) {
 
             // Get a list of all the HUD sprites that are stored
@@ -75,19 +64,13 @@ class MyUIManager extends UIManager {
                 const mouseClickPosition = new Rect(
                     this.mouseManager.clickPosition.x,
                     this.mouseManager.clickPosition.y,
-                    1,                                      // Width
-                    1                                       // Height
+                    1, // Width
+                    1 // Height
                 );
 
                 // Use the rect object to check if the mouse click took place
                 // inside of the hudSprite
                 if (hudSprite.transform.boundingBox.contains(mouseClickPosition)) {
-
-                    // TO DO: Your code here...
-
-                    // If the user clicks the pause button...
-                    // If the user clicks the menu button...
-                    // If the user clicks the flip gravity button...
 
                     if (hudSprite.id === "Sound on Button") {
 
@@ -103,7 +86,7 @@ class MyUIManager extends UIManager {
                     }
 
                     if (hudSprite.id === "Sound off Button") {
-                        
+
                         console.log("You clicked the sound off button!");
 
                         notificationCenter.notify(

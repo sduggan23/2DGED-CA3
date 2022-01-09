@@ -32,8 +32,8 @@ class ClickableObjectController {
             const mouseClickPosition = new Rect(
                 this.mouseManager.clickPosition.x,
                 this.mouseManager.clickPosition.y,
-                1,                                      // Width
-                1                                       // Height
+                1, // Width
+                1 // Height
             );
 
             // Use the Rect object to check if the mouse click took place

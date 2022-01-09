@@ -38,19 +38,17 @@ class MyMenuManager extends MenuManager {
     }
 
     showMenu(statusType) {
-        
+
         if (statusType != 0) {
 
             $('#main_menu').hide();
-        }
-
-        else {
+        } else {
 
             $('#main_menu').show();
         }
     }
 
-    initialize() {      
+    initialize() {
 
         // Hide the exit menu
         $('#exit_menu').hide();
@@ -88,7 +86,7 @@ class MyMenuManager extends MenuManager {
                     ["background"]
                 )
             );
-        });        
+        });
 
         // If the exit button is clicked
         $('.exit').click(function () {
@@ -97,7 +95,7 @@ class MyMenuManager extends MenuManager {
             $('#exit_menu').show();
             $('#exit_menu').removeClass('hidden');
 
-            
+
         });
 
         // If the control button is clicked
@@ -110,6 +108,6 @@ class MyMenuManager extends MenuManager {
     }
 
     update(gameTime) {
-        
+
     }
 }

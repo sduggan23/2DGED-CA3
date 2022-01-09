@@ -39,7 +39,7 @@ class PlayerMoveController {
         parent.body.applyGravity(gameTime);
 
         if (parent.body.onGround) {
-            
+
             parent.body.applyFriction(gameTime);
         }
     }
@@ -48,7 +48,7 @@ class PlayerMoveController {
 
         this.handleMove(gameTime, parent);
         this.handleJump(gameTime, parent);
-                this.handleJump(gameTime, parent);
+        this.handleJump(gameTime, parent);
     }
 
     handleMove(gameTime, parent) {
@@ -74,8 +74,7 @@ class PlayerMoveController {
         }
 
         // If the move right key is pressed
-        else
-        {
+        else {
             // Update the player's animation
             parent.artist.setTake("Idle");
         }
@@ -173,6 +172,7 @@ class PlayerMoveController {
                 // like the player is bouncing off the platform above
                 parent.body.setVelocityY(this.jumpVelocity);
             }
+
         }
     }
 
@@ -212,18 +212,18 @@ class PlayerMoveController {
                         ["collectable"]
                     )
                 );
-                
+
                 notificationCenter.notify(
                     new Notification(
                         NotificationType.Sprite,
                         NotificationAction.RemoveFirstBy,
-                        [ActorType.Platform, platform =>  platform.transform.translation.y == 0]
+                        [ActorType.Platform, platform => platform.transform.translation.y == 0]
                     )
                 );
             }
         }
     }
-    
+
 
     handleEnemyCollision(parent) {
 
@@ -252,17 +252,17 @@ class PlayerMoveController {
 
 
                 notificationCenter.notify(
-                  new Notification(
-                    NotificationType.Sprite,
-                    NotificationAction.RemoveFirst,
-                    [parent]
-                  )
+                    new Notification(
+                        NotificationType.Sprite,
+                        NotificationAction.Remove,
+                        [parent]
+                    )
                 );
 
                 $('#gameover_menu').show();
                 $('#gameover_menu').removeClass('hidden');
 
-                                
+
                 notificationCenter.notify(
                     new Notification(
                         NotificationType.Sound,
@@ -317,7 +317,7 @@ class PlayerMoveController {
             }
         }
     }
-    
+
 
     applyInput(parent) {
 

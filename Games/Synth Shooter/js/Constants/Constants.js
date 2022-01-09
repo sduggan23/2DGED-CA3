@@ -1,4 +1,3 @@
-
 class GameData {
   static AUDIO_CUE_ARRAY = [
     new AudioCue("background", AudioType.Background, 0.35, 1, 0, true),
@@ -70,12 +69,6 @@ class GameData {
     layerDepth: 0,
     explodeBoundingBoxInPixels: -6,
 
-    // We have just one platform sprite, so it makes sense to
-    // store a list of positions at which we want to place that
-    // sprite in our game world. Mess around with these values
-    // by either adding or removing positions from our array, or
-    // by editing the x, y values of each position. Check out the 
-    // results by refreshing the web page!
     translationArray: [
 
       /****************** Ground *******************/
@@ -84,7 +77,7 @@ class GameData {
       new Vector2(160, 400),
       //new Vector2(320, 400),
       new Vector2(480, 400),
-      new Vector2(640, 400), 
+      new Vector2(640, 400),
       //new Vector2(800, 400),
       //new Vector2(960, 400),
 
@@ -103,33 +96,8 @@ class GameData {
       new Vector2(2880, 400),
       new Vector2(3040, 400),
       new Vector2(3200, 400),
-
-      //new Vector2(3360, 400),
-      //new Vector2(3520, 400),
-      //new Vector2(3680, 400),
-      //new Vector2(3840, 400),
-      //new Vector2(4000, 400),
-      //new Vector2(4160, 400),
-
-      // new Vector2(4320, 400),
-      // new Vector2(4480, 400),
-      // new Vector2(4640, 400),
-      // new Vector2(4800, 400),
-      // new Vector2(4960, 400),
-      // new Vector2(5120, 400),
-      // new Vector2(5280, 400),
-
-      // new Vector2(5600, 400),
-      // new Vector2(5760, 400),
-      // new Vector2(5920, 400),
-      // new Vector2(6080, 400),
-      // new Vector2(6240, 400),
-      // new Vector2(6400, 400),
-      // new Vector2(6560, 400)
-
-
     ]
-    
+
   };
 
   static LARGE_BUILDING_PLATFORM_DATA = {
@@ -183,74 +151,45 @@ class GameData {
       new Vector2(-640, 100),
 
       // Platforms
-       new Vector2(320, 375),
+      new Vector2(320, 375),
 
-       new Vector2(640, 400),
-       new Vector2(640, 350),
+      new Vector2(640, 400),
+      new Vector2(640, 350),
 
-       new Vector2(960, 375),
+      new Vector2(960, 375),
 
-       new Vector2(1920, 400),
-       new Vector2(1920, 350),
+      new Vector2(1920, 400),
+      new Vector2(1920, 350),
 
-       new Vector2(3200,400),
-       new Vector2(3200,350),
+      new Vector2(3200, 400),
+      new Vector2(3200, 350),
 
-       new Vector2(3360,400),
-       new Vector2(3360,350),
-       new Vector2(3360,300),
+      new Vector2(3360, 400),
+      new Vector2(3360, 350),
+      new Vector2(3360, 300),
 
-       new Vector2(3520,400),
-       new Vector2(3520,350),
-       new Vector2(3520,300),
-       new Vector2(3520,250),
+      new Vector2(3520, 400),
+      new Vector2(3520, 350),
+      new Vector2(3520, 300),
+      new Vector2(3520, 250),
 
       //  new Vector2(3680,400),
       //  new Vector2(3680,350),
       //  new Vector2(3680,305),
 
-       new Vector2(3840,400),
-       new Vector2(3840,350),
-       new Vector2(3840,300),
-       new Vector2(3840,250),
+      new Vector2(3840, 400),
+      new Vector2(3840, 350),
+      new Vector2(3840, 300),
+      new Vector2(3840, 250),
 
-       new Vector2(4000,400),
-       new Vector2(4000,350),
-       new Vector2(4000,300),
+      new Vector2(4000, 400),
+      new Vector2(4000, 350),
+      new Vector2(4000, 300),
 
-       new Vector2(4160,400),
-       new Vector2(4160,350),
+      new Vector2(4160, 400),
+      new Vector2(4160, 350),
 
-       new Vector2(4320, 400),
-
-      //  new Vector2(4480,400),
-      //  new Vector2(4480,350),
-
-      //  new Vector2(4640,400),
-      //  new Vector2(4640,350),
-      //  new Vector2(4640,300),
-
-      //  new Vector2(4800,400),
-      //  new Vector2(4800,350),
-      //  new Vector2(4800,300),
-      //  new Vector2(4800,250),
-
-      //  new Vector2(5120,400),
-      //  new Vector2(5120,350),
-      //  new Vector2(5120,300),
-      //  new Vector2(5120,250),
-
-      //  new Vector2(5280,400),
-      //  new Vector2(5280,350),
-      //  new Vector2(5280,300),
-
-      //  new Vector2(5440,400),
-      //  new Vector2(5440,350),
-
-      //  new Vector2(5760, 400),
-      //  new Vector2(5760, 350)
-
-
+      new Vector2(4320, 400)
     ]
   };
 
@@ -298,7 +237,7 @@ class GameData {
       new Vector2(3030, 200),
       new Vector2(3085, 200)
     ]
-    
+
   };
 
   static COLLECTIBLES_ANIMATION_DATA = {
@@ -320,16 +259,15 @@ class GameData {
       new Vector2(1830, 220),
       new Vector2(2325, 245),
       new Vector2(3050, 195)
-      // new Vector2(4520, 350)
     ]
-    
+
   };
 
-    static LASER_GATE_DATA = {
+  static LASER_GATE_DATA = {
     id: "Laser Gate",
     spriteSheet: document.getElementById("laser_sprite_sheet"),
     sourcePosition: new Vector2(80, 0),
-    sourceDimensions: new Vector2(35,200),
+    sourceDimensions: new Vector2(35, 200),
     rotation: 0,
     scale: new Vector2(1, 2),
     origin: Vector2.Zero,
@@ -345,7 +283,6 @@ class GameData {
       new Vector2(2100, 0),
       new Vector2(3250, 0),
       new Vector2(3300, 0)
-      
     ]
   };
 
@@ -353,9 +290,9 @@ class GameData {
     id: "Game Over Trigger",
     spriteSheet: document.getElementById("laser_sprite_sheet"),
     sourcePosition: new Vector2(80, 0),
-    sourceDimensions: new Vector2(35,200),
+    sourceDimensions: new Vector2(35, 200),
     rotation: 90,
-    scale: new Vector2(500,0.1),
+    scale: new Vector2(500, 0.1),
     origin: Vector2.Zero,
     actorType: ActorType.Enemy,
     collisionType: CollisionType.NotCollidable,
@@ -396,19 +333,13 @@ class GameData {
         startFrameIndex: 0,
         endFrameIndex: 3,
 
-        // Notice that I chose the largest of all the widths taken from the frames
-        // array below
         boundingBoxDimensions: new Vector2(49, 50),
 
         frames: [
-
-          // This list of rects just represent the positions
-          // and dimension of each individual animation frame
-          // on the sprite sheet
-          new Rect(304, 16, 21, 46),    // Animation frame 1
-          new Rect(378, 12, 20, 50),    // Animation frame 2
-          new Rect(443, 11, 20, 50),    // Animation frame 3
-          new Rect(507, 14, 20, 50)    // Animation frame 4
+          new Rect(304, 16, 21, 46), // Animation frame 1
+          new Rect(378, 12, 20, 50), // Animation frame 2
+          new Rect(443, 11, 20, 50), // Animation frame 3
+          new Rect(507, 14, 20, 50) // Animation frame 4
         ]
       },
 
@@ -424,20 +355,17 @@ class GameData {
 
         startFrameIndex: 0,
         endFrameIndex: 7,
-
-        // Notice that I chose the largest of all the widths taken from the frames
-        // array below
         boundingBoxDimensions: new Vector2(49, 54),
 
         frames: [
-          new Rect(10, 149, 26, 48),     // Animation frame 1
-          new Rect(76, 149, 36, 48),    // Animation frame 2
-          new Rect(140, 149, 47, 46),   // Animation frame 3
-          new Rect(206, 149, 41, 51),   // Animation frame 4
-          new Rect(10, 213, 31, 48),   // Animation frame 5
-          new Rect(76, 213, 36, 49),   // Animation frame 6
-          new Rect(139, 213, 47, 46),   // Animation frame 7
-          new Rect(205, 213, 42, 51)   // Animation frame 8
+          new Rect(10, 149, 26, 48), // Animation frame 1
+          new Rect(76, 149, 36, 48), // Animation frame 2
+          new Rect(140, 149, 47, 46), // Animation frame 3
+          new Rect(206, 149, 41, 51), // Animation frame 4
+          new Rect(10, 213, 31, 48), // Animation frame 5
+          new Rect(76, 213, 36, 49), // Animation frame 6
+          new Rect(139, 213, 47, 46), // Animation frame 7
+          new Rect(205, 213, 42, 51) // Animation frame 8
         ]
       },
 
@@ -454,24 +382,17 @@ class GameData {
         startFrameIndex: 0,
         endFrameIndex: 7,
 
-        // Notice that I chose the largest of all the widths taken from the frames
-        // array below
         boundingBoxDimensions: new Vector2(49, 54),
 
         frames: [
-
-          // This list of rects just represent the positions
-          // and dimension of each individual animation frame
-          // on the sprite sheet
-
-          new Rect(10, 16, 41, 51),   // Animation frame 1
-          new Rect(71, 16, 47, 46),   // Animation frame 2
-          new Rect(145, 16, 36, 48),   // Animation frame 3
-          new Rect(221, 16, 26, 48),   // Animation frame 4
-          new Rect(10, 80, 42, 51),   // Animation frame 5
-          new Rect(71, 80, 47, 46),   // Animation frame 6
-          new Rect(145, 80, 36, 49),   // Animation frame 7
-          new Rect(216, 80, 31, 48)    // Animation frame 8
+          new Rect(10, 16, 41, 51), // Animation frame 1
+          new Rect(71, 16, 47, 46), // Animation frame 2
+          new Rect(145, 16, 36, 48), // Animation frame 3
+          new Rect(221, 16, 26, 48), // Animation frame 4
+          new Rect(10, 80, 42, 51), // Animation frame 5
+          new Rect(71, 80, 47, 46), // Animation frame 6
+          new Rect(145, 80, 36, 49), // Animation frame 7
+          new Rect(216, 80, 31, 48) // Animation frame 8
         ]
       }
     }
@@ -504,20 +425,15 @@ class GameData {
         startFrameIndex: 0,
         endFrameIndex: 4,
 
-        // Notice that I chose the largest of all the widths taken from the frames
-        // array below
         boundingBoxDimensions: new Vector2(38, 30),
 
         frames: [
 
-          // This list of rects just represent the positions
-          // and dimension of each individual animation frame
-          // on the sprite sheet
-          new Rect(152, 16, 38, 30),    // Animation frame 1
-          new Rect(194, 16, 38, 30),
-          new Rect(194, 16, 38, 30),
-          new Rect(194, 16, 38, 30),
-          new Rect(152, 16, 38, 30),
+          new Rect(152, 16, 38, 30), // Animation frame 1
+          new Rect(194, 16, 38, 30), // Animation frame 2
+          new Rect(194, 16, 38, 30), // Animation frame 3
+          new Rect(194, 16, 38, 30), // Animation frame 4
+          new Rect(152, 16, 38, 30) // Animation frame 5
         ]
       },
 
@@ -534,17 +450,16 @@ class GameData {
         startFrameIndex: 0,
         endFrameIndex: 5,
 
-        // Notice that I chose the largest of all the widths taken from the frames
-        // array below
+
         boundingBoxDimensions: new Vector2(40, 30),
 
         frames: [
-          new Rect(540, 92, 40, 24),    // Animation frame 1
-          new Rect(491, 92, 40, 24),    // Animation frame 2
-          new Rect(445, 90, 40, 26),    // Animation frame 3
-          new Rect(401, 88, 40, 28),    // Animation frame 4
-          new Rect(355, 84, 38, 30),    // Animation frame 5
-          new Rect(311, 88, 38, 26)     // Animation frame 6
+          new Rect(540, 92, 40, 24), // Animation frame 1
+          new Rect(491, 92, 40, 24), // Animation frame 2
+          new Rect(445, 90, 40, 26), // Animation frame 3
+          new Rect(401, 88, 40, 28), // Animation frame 4
+          new Rect(355, 84, 38, 30), // Animation frame 5
+          new Rect(311, 88, 38, 26) // Animation frame 6
         ]
       },
 
@@ -561,33 +476,29 @@ class GameData {
         startFrameIndex: 0,
         endFrameIndex: 5,
 
-        // Notice that I chose the largest of all the widths taken from the frames
-        // array below
+
         boundingBoxDimensions: new Vector2(40, 34),
 
         frames: [
 
-          // This list of rects just represent the positions
-          // and dimension of each individual animation frame
-          // on the sprite sheet
 
-          new Rect(0, 92, 40, 24),   // Animation frame 1
-          new Rect(48, 92, 40, 24),   // Animation frame 2
-          new Rect(94, 90, 40, 26),    // Animation frame 3
-          new Rect(138, 88, 40, 28),    // Animation frame 4
-          new Rect(186, 84, 38, 30),    // Animation frame 5
-          new Rect(230, 88, 38, 26)     // Animation frame 6
+          new Rect(0, 92, 40, 24), // Animation frame 1
+          new Rect(48, 92, 40, 24), // Animation frame 2
+          new Rect(94, 90, 40, 26), // Animation frame 3
+          new Rect(138, 88, 40, 28), // Animation frame 4
+          new Rect(186, 84, 38, 30), // Animation frame 5
+          new Rect(230, 88, 38, 26) // Animation frame 6
         ]
       }
     }
   };
 
-  
+
   static ENEMY_ANIMATION_DATA = {
 
     id: "Enemy Animation Data",
     spriteSheet: document.getElementById("drone_sprite_sheet"),
-    
+
     // Animations
     takes: {
 
@@ -595,7 +506,7 @@ class GameData {
       "Drone Fly": {
 
         frameRatePerSec: 2,
-        
+
         // -1 = Loop forever
         //  0 = Run once (no loop)
         //  N = Loop N times
@@ -607,15 +518,15 @@ class GameData {
         boundingBoxDimensions: new Vector2(35, 50),
 
         frames: [
-          new Rect(16, 4, 34, 48),
-          new Rect(77, 4, 29, 48),
-          new Rect(150, 3, 31, 48),
-          new Rect(226, 4, 29, 48),
-          new Rect(221, 74, 34, 48),
-          new Rect(226, 4, 29, 48),
-          new Rect(150, 3, 31, 48),
-          new Rect(77, 4, 29, 48),
-          new Rect(16, 4, 34, 48)
+          new Rect(16, 4, 34, 48), // Animation frame 1
+          new Rect(77, 4, 29, 48), // Animation frame 2
+          new Rect(150, 3, 31, 48), // Animation frame 3
+          new Rect(226, 4, 29, 48), // Animation frame 4
+          new Rect(221, 74, 34, 48), // Animation frame 5
+          new Rect(226, 4, 29, 48), // Animation frame 6
+          new Rect(150, 3, 31, 48), // Animation frame 7
+          new Rect(77, 4, 29, 48), // Animation frame 8
+          new Rect(16, 4, 34, 48) // Animation frame 9
         ]
       }
     }
@@ -625,7 +536,7 @@ class GameData {
 
     id: "Level Complete Trigger",
     spriteSheet: document.getElementById("flag_sprite_sheet"),
-    
+
     // Animations
     takes: {
 
@@ -633,7 +544,7 @@ class GameData {
       "Flag Fly": {
 
         frameRatePerSec: 2,
-        
+
         // -1 = Loop forever
         //  0 = Run once (no loop)
         //  N = Loop N times
@@ -645,17 +556,15 @@ class GameData {
         boundingBoxDimensions: new Vector2(28, 61),
 
         frames: [
-          new Rect(27, 76, 28, 61),
-          new Rect(59, 76, 28, 61),
-          new Rect(90, 76, 28, 61),
-          new Rect(121, 76, 27, 61)
+          new Rect(27, 76, 28, 61), // Animation frame 1
+          new Rect(59, 76, 28, 61), // Animation frame 2
+          new Rect(90, 76, 28, 61), // Animation frame 3
+          new Rect(121, 76, 27, 61) // Animation frame 4
         ]
       }
     }
   };
 }
-
-
 
 const FontType = {
   InformationSmall: "12px Arial",

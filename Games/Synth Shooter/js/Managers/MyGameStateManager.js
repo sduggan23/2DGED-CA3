@@ -27,7 +27,7 @@ class MyGameStateManager extends GameStateManager {
     }
 
     constructor(id, notificationCenter, initialPlayerHealth, initialPlayerAmmo) {
-        
+
         super(id);
 
         this.notificationCenter = notificationCenter;
@@ -36,14 +36,14 @@ class MyGameStateManager extends GameStateManager {
         this.playerAmmo = initialPlayerAmmo;
 
         this.inventory = [];
-        
+
         this.registerForNotifications();
     }
 
     registerForNotifications() {
         this.notificationCenter.register(
-            NotificationType.GameState, 
-            this, 
+            NotificationType.GameState,
+            this,
             this.handleGameStateNotification
         );
     }
@@ -64,7 +64,7 @@ class MyGameStateManager extends GameStateManager {
                 this.handleAmmoStateChange(notification.notificationArguments);
                 break;
 
-            // Add more cases here...
+                // Add more cases here...
 
             default:
                 break;
@@ -98,7 +98,7 @@ class MyGameStateManager extends GameStateManager {
     update(gameTime) {
 
         // Add your code here...
-        
+
         // For example, every update(), we could check the player's health. If
         // the player's health is <= 0, then we can create a notification...
 
