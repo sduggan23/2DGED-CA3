@@ -869,23 +869,6 @@ function initializeHUD() {
         1
     );
 
-    sprite.attachController(
-        new ClickableObjectController(
-            mouseManager,
-
-            () => {
-
-                notificationCenter.notify(
-                    new Notification(
-                        NotificationType.Sound,
-                        NotificationAction.Pause,
-                        ["background"]
-                    )
-                );
-            }
-        )
-    );
-
     // Add sprite to the object manager
     objectManager.add(sprite);
 }
@@ -928,22 +911,6 @@ function initializeHUD2() {
         artist,
         1,
         1
-    );
-
-    sprite.attachController(
-        new ClickableObjectController(
-            mouseManager,
-
-            () => {
-                notificationCenter.notify(
-                    new Notification(
-                        NotificationType.Sound,
-                        NotificationAction.Play,
-                        ["background"]
-                    )
-                );
-            }
-        )
     );
 
     // Add sprite to the object manager

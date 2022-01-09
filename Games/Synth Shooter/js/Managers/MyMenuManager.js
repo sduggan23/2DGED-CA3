@@ -80,6 +80,7 @@ class MyMenuManager extends MenuManager {
                 )
             );
 
+            // Play the background audio
             notificationCenter.notify(
                 new Notification(
                     NotificationType.Sound,
@@ -110,7 +111,5 @@ class MyMenuManager extends MenuManager {
 
     update(gameTime) {
         
-
-        // TO DO: Add code to listen for a 'pause key' press, and show/hide the menu accordingly
     }
 }

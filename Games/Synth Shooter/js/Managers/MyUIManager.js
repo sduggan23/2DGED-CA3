@@ -89,13 +89,30 @@ class MyUIManager extends UIManager {
                     // If the user clicks the menu button...
                     // If the user clicks the flip gravity button...
 
-                    if (hudSprite.id === "Pause Button") {
+                    if (hudSprite.id === "Sound on Button") {
 
-                        console.log("You clicked the pause button!");
+                        console.log("You clicked the sound on button!");
+
+                        notificationCenter.notify(
+                            new Notification(
+                                NotificationType.Sound,
+                                NotificationAction.Play,
+                                ["background"]
+                            )
+                        );
                     }
 
-                    if (hudSprite.id === "Exit Button") {
+                    if (hudSprite.id === "Sound off Button") {
                         
+                        console.log("You clicked the sound off button!");
+
+                        notificationCenter.notify(
+                            new Notification(
+                                NotificationType.Sound,
+                                NotificationAction.Pause,
+                                ["background"]
+                            )
+                        );
                     }
                 }
             }
