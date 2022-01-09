@@ -221,13 +221,6 @@ function initializeCameras() {
         StatusType.Updated
     );
 
-    // You should extract the below variables used to construct the flight
-    // camera controller class into a seperate constants file. There should
-    // be very few magic variables/numbers in your code!
-
-    // See more: 
-    // https://stackoverflow.com/questions/47882/what-is-a-magic-number-and-why-is-it-bad
-
     camera.attachController(
         new FlightCameraController(
             keyboardManager,
@@ -258,7 +251,8 @@ function initializeSprites() {
     initializePlayer2();
     initializeEnemies();
 
-    //initializeHUD();
+    initializeHUD();
+    initializeHUD2();
     initializeOnScreenText();
 }
 
@@ -350,11 +344,6 @@ function initializeGroundPlatforms() {
         GameData.GROUND_PLATFORM_DATA.layerDepth
     );
 
-    // Check out the Constant.js file - it contains an object called
-    // PLATFORM_DATA, which contains an array property called translationArray.
-    // This translationArray simply contains a list of positions for where we
-    // want to position the platforms on our screen. Take a look at this array
-    // to understand more.
     for (let i = 0; i < GameData.GROUND_PLATFORM_DATA.translationArray.length; i++) {
 
         // Clone sprite
@@ -407,11 +396,6 @@ function initializeLargeBuildingPlatforms() {
         GameData.LARGE_BUILDING_PLATFORM_DATA.layerDepth
     );
 
-    // Check out the Constant.js file - it contains an object called
-    // PLATFORM_DATA, which contains an array property called translationArray.
-    // This translationArray simply contains a list of positions for where we
-    // want to position the platforms on our screen. Take a look at this array
-    // to understand more.
     for (let i = 0; i < GameData.LARGE_BUILDING_PLATFORM_DATA.translationArray.length; i++) {
 
         // Clone sprite
@@ -464,11 +448,6 @@ function initializePlatforms() {
         GameData.PLATFORM_DATA.layerDepth
     );
 
-    // Check out the Constant.js file - it contains an object called
-    // PLATFORM_DATA, which contains an array property called translationArray.
-    // This translationArray simply contains a list of positions for where we
-    // want to position the platforms on our screen. Take a look at this array
-    // to understand more.
     for (let i = 0; i < GameData.PLATFORM_DATA.translationArray.length; i++) {
 
         // Clone sprite
@@ -521,11 +500,6 @@ function initializeLaserGates() {
         GameData.LASER_GATE_DATA.layerDepth
     );
 
-    // Check out the Constant.js file - it contains an object called
-    // PLATFORM_DATA, which contains an array property called translationArray.
-    // This translationArray simply contains a list of positions for where we
-    // want to position the platforms on our screen. Take a look at this array
-    // to understand more.
     for (let i = 0; i < GameData.LASER_GATE_DATA.translationArray.length; i++) {
 
         // Clone sprite
@@ -578,11 +552,6 @@ function initializeGameOverTrigger() {
         GameData.GAME_OVER_TRIGGER_DATA.layerDepth
     );
 
-    // Check out the Constant.js file - it contains an object called
-    // PLATFORM_DATA, which contains an array property called translationArray.
-    // This translationArray simply contains a list of positions for where we
-    // want to position the platforms on our screen. Take a look at this array
-    // to understand more.
     for (let i = 0; i < GameData.GAME_OVER_TRIGGER_DATA.translationArray.length; i++) {
 
         // Clone sprite
@@ -635,11 +604,6 @@ function initializePickups() {
         GameData.COLLECTIBLES_ANIMATION_DATA.layerDepth
     );
 
-    // Check out the Constant.js file - it contains an object called
-    // PLATFORM_DATA, which contains an array property called translationArray.
-    // This translationArray simply contains a list of positions for where we
-    // want to position the platforms on our screen. Take a look at this array
-    // to understand more.
     for (let i = 0; i < GameData.COLLECTIBLES_ANIMATION_DATA.translationArray.length; i++) {
 
         // Clone sprite
@@ -680,21 +644,6 @@ function initializePlayer() {
         0                                                       // Explode By
     );
 
-    // The moveable sprite is a sprite which has an attached physics body. The
-    // attached physics body allows us to move the sprite in a particular way.
-    // For example, we can apply velocity to the physics body, to move it in a
-    // particular direction. If we apply a velocity in the -y direction, the 
-    // physics body will move upwards. If we apply a velocity in the +x 
-    // direction, the physics body will move to the left. The physics body, in
-    // turn, moves the sprite. This is done by updating the position of the
-    // sprite to match the position of the physics body. Additionally, forces
-    // are automatically applied to the physics body every update. This 
-    // includes gravity and friction. We can define how much gravity and how
-    // much friction is applied to the physics body by setting those values
-    // directly (see below an example of how this works). We can also set the
-    // max speed of the physics body to define how fast we want to allow it to
-    // move.
-
     sprite = new MoveableSprite(
         "Player",                                               // ID
         transform,                                              // Transform
@@ -706,18 +655,9 @@ function initializePlayer() {
         1                                                       // LayerDepth
     );
 
-    // Set characteristics of the body attached to the moveable sprite
-    // Play around with these values and see what happens.
     sprite.body.maximumSpeed = GameData.MAX_SPEED;
     sprite.body.friction = FrictionType.Low;
     sprite.body.gravity = GravityType.Weak;
-
-    // How could you change these values in-game?
-    // You have two options - you could access them via a controller which is attached
-    // to the player - or, you could access them via a manager (such as the game state
-    // manager) by extracting the player sprite from the object manager (i.e., you could
-    // use this.objectManager.get(ActorType.Player)). From there, you could update these
-    // values.
 
     sprite.attachController(
         new PlayerMoveController(
@@ -732,9 +672,7 @@ function initializePlayer() {
     );
 
     // Add sprite to object manager
-    objectManager.add(sprite);
-
-   
+    objectManager.add(sprite); 
 }
 
 function initializePlayer2() {
@@ -761,21 +699,6 @@ function initializePlayer2() {
         0                                                       // Explode By
     );
 
-    // The moveable sprite is a sprite which has an attached physics body. The
-    // attached physics body allows us to move the sprite in a particular way.
-    // For example, we can apply velocity to the physics body, to move it in a
-    // particular direction. If we apply a velocity in the -y direction, the 
-    // physics body will move upwards. If we apply a velocity in the +x 
-    // direction, the physics body will move to the left. The physics body, in
-    // turn, moves the sprite. This is done by updating the position of the
-    // sprite to match the position of the physics body. Additionally, forces
-    // are automatically applied to the physics body every update. This 
-    // includes gravity and friction. We can define how much gravity and how
-    // much friction is applied to the physics body by setting those values
-    // directly (see below an example of how this works). We can also set the
-    // max speed of the physics body to define how fast we want to allow it to
-    // move.
-
     sprite = new MoveableSprite(
         "Player2",                                               // ID
         transform,                                              // Transform
@@ -787,18 +710,9 @@ function initializePlayer2() {
         1                                                       // LayerDepth
     );
 
-    // Set characteristics of the body attached to the moveable sprite
-    // Play around with these values and see what happens.
     sprite.body.maximumSpeed = GameData.MAX_SPEED2;
     sprite.body.friction = FrictionType.Low;
     sprite.body.gravity = GravityType.Weak;
-
-    // How could you change these values in-game?
-    // You have two options - you could access them via a controller which is attached
-    // to the player - or, you could access them via a manager (such as the game state
-    // manager) by extracting the player sprite from the object manager (i.e., you could
-    // use this.objectManager.get(ActorType.Player)). From there, you could update these
-    // values.
 
     sprite.attachController(
         new PlayerMoveController(
@@ -813,9 +727,7 @@ function initializePlayer2() {
     );
 
     // Add sprite to object manager
-    objectManager.add(sprite);
-
-   
+    objectManager.add(sprite);   
 }
 
 function initializeEnemies() {
@@ -828,12 +740,7 @@ function initializeEnemies() {
 
     artist = new AnimatedSpriteArtist(
         context,                                        // Context
-
-        // Don't be afraid to edit the alpha value! This allows you to make
-        // certain objects transparent, opaque, or semi-transparent. The
-        // range of values for alpha is [0, 1].
         1,
-
         GameData.ENEMY_ANIMATION_DATA           // Animation data
     );
 
@@ -843,17 +750,6 @@ function initializeEnemies() {
         Vector2.One,                                    // Scale
         Vector2.Zero,                                   // Origin
         artist.getBoundingBoxByTakeName("Drone Fly"),  // Dimensions
-
-        // The explode by value determines how much bigger (or smaller) the
-        // collision box should be for a particular sprite. Edit this value
-        // to see what results you get. Make sure the debug mod is enabled
-        // so that collision boxes are drawn on-screen.
-
-        // It is important to note that the below explode by value must be
-        // an even number. The explode by value can be positive (to make the 
-        // sprite's collision box larger), or negative (to make the sprite's
-        // collision box smaller). Leave the value as 0 if you would like 
-        // the collision box to match the size of the sprite.
         0
     );
 
@@ -864,11 +760,6 @@ function initializeEnemies() {
         CollisionType.Collidable,
         StatusType.Updated | StatusType.Drawn,
         artist,
-
-        // The below values (scroll speed multipler and layer depth) are
-        // primarily used to create parallax effects. See the initialize
-        // background function to get an idea of how they are used.
-
         1,          // Scroll speed multiplier
         1           // Layer depth
     );
@@ -937,63 +828,127 @@ function initializeLevelCompleteTrigger() {
     objectManager.add(sprite);
 }
 
+const soundOffSprite = document.getElementById("sound_off_sprite_sheet");
 
-// Hard-coded for demo purposes... you should not do this in
-// your project! You shoud either initialize your sprite sheets
-// in an initialize function (which is basic, but okay), or store
-// them in the constants file (which is better!).
-const uiSpriteSheet = document.getElementById("ui_sprite_sheet");
+function initializeHUD() {
 
-// function initializeHUD() {
+    let transform;
+    let artist;
+    let sprite;
 
-//     let transform;
-//     let artist;
-//     let sprite;
+    transform = new Transform2D(
+        new Vector2(
+            canvas.clientWidth - 50,
+            10
+        ),
+        0,
+        new Vector2(3, 3),
+        Vector2.Zero,
+        new Vector2(10, 10),
+        0
+    );
 
-//     transform = new Transform2D(
-//         new Vector2(
-//             canvas.clientWidth - 40,
-//             10
-//         ),
-//         0,
-//         new Vector2(3, 3),
-//         Vector2.Zero,
-//         new Vector2(10, 10),
-//         0
-//     );
+    artist = new SpriteArtist(
+        context,                                        // Context
+        1,                                              // Alpha
+        soundOffSprite,                                  // Spritesheet
+        Vector2.Zero,                                   // Source Position
+        new Vector2(32, 32),                            // Source Dimension
 
-//     artist = new SpriteArtist(
-//         context,                                        // Context
-//         1,                                              // Alpha
-//         uiSpriteSheet,                                  // Spritesheet
-//         Vector2.Zero,                                   // Source Position
-//         new Vector2(32, 32),                            // Source Dimension
-        
-//         // Set this to true if you want the sprite to stay in one
-//         // position on the screen (i.e., the sprite WON'T scroll
-//         // off-screen if the camera moves right or left).
+        true                                            // Fixed Position
+    );
 
-//         // Set this to false if you want the sprite to move with
-//         // the world (i.e., the sprite WILL scroll off-screen when
-//         // the camera moves to the right or to the left.
+    sprite = new Sprite(
+        "Sound off Button",
+        transform,
+        ActorType.HUD,
+        CollisionType.NotCollidable,
+        StatusType.Updated | StatusType.Drawn,
+        artist,
+        1,
+        1
+    );
 
-//         true                                            // Fixed Position
-//     );
+    sprite.attachController(
+        new ClickableObjectController(
+            mouseManager,
 
-//     sprite = new Sprite(
-//         "Pause Button",
-//         transform,
-//         ActorType.HUD,
-//         CollisionType.NotCollidable,
-//         StatusType.Updated | StatusType.Drawn,
-//         artist,
-//         1,
-//         1
-//     );
+            () => {
 
-//     // Add sprite to the object manager
-//     objectManager.add(sprite);
-// }
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sound,
+                        NotificationAction.Pause,
+                        ["background"]
+                    )
+                );
+            }
+        )
+    );
+
+    // Add sprite to the object manager
+    objectManager.add(sprite);
+}
+
+const soundOnSprite = document.getElementById("sound_on_sprite_sheet");
+
+function initializeHUD2() {
+
+    let transform;
+    let artist;
+    let sprite;
+
+    transform = new Transform2D(
+        new Vector2(
+            canvas.clientWidth - 100,
+            10
+        ),
+        0,
+        new Vector2(3, 3),
+        Vector2.Zero,
+        new Vector2(10, 10),
+        0
+    );
+
+    artist = new SpriteArtist(
+        context,                                        // Context
+        1,                                              // Alpha
+        soundOnSprite,                                  // Spritesheet
+        Vector2.Zero,                                   // Source Position
+        new Vector2(32, 32),                            // Source Dimension
+        true                                            // Fixed Position
+    );
+
+    sprite = new Sprite(
+        "Sound on Button",
+        transform,
+        ActorType.HUD,
+        CollisionType.NotCollidable,
+        StatusType.Updated | StatusType.Drawn,
+        artist,
+        1,
+        1
+    );
+
+    sprite.attachController(
+        new ClickableObjectController(
+            mouseManager,
+
+            () => {
+                notificationCenter.notify(
+                    new Notification(
+                        NotificationType.Sound,
+                        NotificationAction.Play,
+                        ["background"]
+                    )
+                );
+            }
+        )
+    );
+
+    // Add sprite to the object manager
+    objectManager.add(sprite);
+}
 
 function initializeOnScreenText() {
 
@@ -1003,9 +958,7 @@ function initializeOnScreenText() {
 
     transform = new Transform2D(
         new Vector2(
-            (canvas.clientWidth / 2 - 40), 
-            10
-        ),
+            (canvas.clientWidth / 2 - 50), 50),
         0,
         Vector2.One,
         Vector2.Zero,
@@ -1021,15 +974,6 @@ function initializeOnScreenText() {
         Color.White,                    // Color
         TextAlignType.Center,             // Text Align
         200,                            // Max Width
-
-        // Set this to true if you want the sprite to stay in one
-        // position on the screen (i.e., the sprite WON'T scroll
-        // off-screen if the camera moves right or left).
-
-        // Set this to false if you want the sprite to move with
-        // the world (i.e., the sprite WILL scroll off-screen when
-        // the camera moves to the right or to the left.
-
         false                            // Fixed Position
     );
 
@@ -1044,7 +988,6 @@ function initializeOnScreenText() {
         1
     );
 
-    // Add sprite to object manager
     objectManager.add(sprite);
 }
 

@@ -642,7 +642,7 @@ class GameData {
         startFrameIndex: 0,
         endFrameIndex: 3,
 
-        boundingBoxDimensions: new Vector2(35, 50),
+        boundingBoxDimensions: new Vector2(28, 61),
 
         frames: [
           new Rect(27, 76, 28, 61),
