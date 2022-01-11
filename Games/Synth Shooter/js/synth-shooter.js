@@ -110,12 +110,12 @@ function draw(gameTime) {
 
 function clearCanvas() {
 
-    context.save();
-    context.fillStyle = "white";
-    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    context.restore();
+    // context.save();
+    // context.fillStyle = "white";
+    // context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    // context.restore();
 
-    // context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
 }
 
 /** GAME SPECIFIC CODE BELOW - CHANGE AS NECESSARY */
@@ -764,7 +764,7 @@ function initializeEnemies() {
         1 // Layer depth
     );
 
-    // Create 5 pickup sprites
+    
     for (let i = 1; i <= 3; i++) {
 
         // Clone sprite
